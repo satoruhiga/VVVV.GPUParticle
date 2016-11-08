@@ -75,7 +75,7 @@
    </PIN>
    <PIN pinname="Spread Count" visible="1">
    </PIN>
-   <PIN pinname="Size Default" slicecount="1" values="0.05">
+   <PIN pinname="Size Default" slicecount="1" values="0.06">
    </PIN>
    <PIN pinname="Color 4D Buffer" visible="1">
    </PIN>
@@ -99,7 +99,7 @@
    </BOUNDS>
    <BOUNDS type="Box" left="1920" top="11865" width="6000" height="4500">
    </BOUNDS>
-   <BOUNDS type="Window" left="5865" top="3885" width="12525" height="9435">
+   <BOUNDS type="Window" left="5190" top="2700" width="12525" height="9435">
    </BOUNDS>
    <PIN pinname="Layers" visible="1">
    </PIN>
@@ -189,9 +189,9 @@
    </BOUNDS>
    <PIN pinname="FilterTime" slicecount="1" values="0">
    </PIN>
+   <PIN pinname="View" visible="1">
+   </PIN>
    </NODE>
-   <LINK srcnodeid="10" srcpinname="View" dstnodeid="16" dstpinname="View">
-   </LINK>
    <LINK srcnodeid="10" srcpinname="Projection" dstnodeid="11" dstpinname="Transform In 2">
    </LINK>
    <NODE systemname="PerfMeter (DX11.Debug)" filename="%VVVV%\packs\dx11\nodes\modules\PerfMeter (DX11.Debug).v4p" nodename="PerfMeter (DX11.Debug)" componentmode="Hidden" id="9">
@@ -249,7 +249,7 @@
    </PIN>
    <PIN pinname="Random Seed" visible="1" slicecount="1" values="0">
    </PIN>
-   <PIN pinname="Width" slicecount="1" values="0.12">
+   <PIN pinname="Width" slicecount="1" values="0.05">
    </PIN>
    </NODE>
    <NODE systemname="Multiply (Value)" nodename="Multiply (Value)" componentmode="Hidden" id="20">
@@ -339,7 +339,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="2730" top="1635" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="3">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="300">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -371,7 +371,7 @@
    </BOUNDS>
    <PIN pinname="Columns" slicecount="1" values="3">
    </PIN>
-   <PIN pinname="Color Input" slicecount="3" values="|0.98470,1.00000,0.00000,1.00000|,|0.00000,0.50856,0.96939,1.00000|,|0.00000,1.00000,0.00000,1.00000|">
+   <PIN pinname="Color Input" slicecount="3" values="|1.00000,0.00000,0.22880,1.00000|,|0.00000,0.50856,0.96939,1.00000|,|0.00000,1.00000,0.00000,1.00000|">
    </PIN>
    <PIN pinname="Color Output" visible="1">
    </PIN>
@@ -417,16 +417,20 @@
    <LINK srcnodeid="31" srcpinname="Buffer" dstnodeid="18" dstpinname="Size Buffer">
    </LINK>
    <NODE systemname="AgeLifeToPct (GPUParticle)" filename="..\nodes\AgeLifeToPct (GPUParticle).v4p" nodename="AgeLifeToPct (GPUParticle)" componentmode="Hidden" id="35">
-   <BOUNDS type="Node" left="1665" top="8565" width="100" height="100">
+   <BOUNDS type="Node" left="1725" top="7845" width="100" height="100">
    </BOUNDS>
    <PIN pinname="AgeLife Buffer" visible="1">
    </PIN>
-   <PIN pinname="Count" visible="1">
+   <PIN pinname="Count" visible="1" slicecount="1" values="29673">
    </PIN>
    <PIN pinname="Buffers" visible="1">
    </PIN>
-   <BOUNDS type="Box" left="1665" top="8565">
+   <BOUNDS type="Box" left="1725" top="7845">
    </BOUNDS>
+   <BOUNDS type="Window" left="19635" top="14520" width="7095" height="6510">
+   </BOUNDS>
+   <PIN pinname="1 to 0 Buffer" visible="1">
+   </PIN>
    </NODE>
    <LINK srcnodeid="0" srcpinname="AgeLife Buffer" dstnodeid="35" dstpinname="AgeLife Buffer">
    </LINK>
@@ -435,7 +439,7 @@
    <NODE systemname="SimpleOperation (Value Buffer)" filename="%VVVV%\packs\InstanceNoodles\nodes\modules\Compute\Value Buffer\SimpleOperation (Value Buffer)\SimpleOperation (Value Buffer).v4p" nodename="SimpleOperation (Value Buffer)" componentmode="Hidden" id="36">
    <BOUNDS type="Node" left="3495" top="9000" width="100" height="100">
    </BOUNDS>
-   <PIN pinname="Value Buffer A" visible="1">
+   <PIN pinname="Value Buffer A" visible="1" slicecount="1" values="||">
    </PIN>
    <PIN pinname="Value Buffer B" visible="1">
    </PIN>
@@ -446,8 +450,6 @@
    <PIN pinname="Spread Count" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="35" srcpinname="Buffers" dstnodeid="36" dstpinname="Value Buffer A">
-   </LINK>
    <LINK srcnodeid="2" srcpinname="Size Buffer" dstnodeid="36" dstpinname="Value Buffer B">
    </LINK>
    <LINK srcnodeid="0" srcpinname="AliveCount" dstnodeid="23" dstpinname="Y Input Value">
@@ -481,7 +483,7 @@
    <LINK srcnodeid="38" srcpinname="Y Output Value" dstnodeid="17" dstpinname="Count">
    </LINK>
    <NODE systemname="Random (Value)" nodename="Random (Value)" componentmode="Hidden" id="40">
-   <BOUNDS type="Node" left="9825" top="2025" width="100" height="100">
+   <BOUNDS type="Node" left="9825" top="1890" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Output" visible="1">
    </PIN>
@@ -518,20 +520,12 @@
    </LINK>
    <LINK srcnodeid="45" srcpinname="Layer Out" dstnodeid="1" dstpinname="Operators">
    </LINK>
-   <NODE systemname="3DNoise (3d Buffer)" filename="%VVVV%\packs\InstanceNoodles\nodes\modules\Compute\3D Buffer\Noise (3D Buffer)\3DNoise (3D Buffer).v4p" nodename="3DNoise (3d Buffer)" componentmode="InAWindow" id="48">
-   <BOUNDS type="Node" left="8715" top="8190" width="100" height="100">
-   </BOUNDS>
-   </NODE>
-   <NODE systemname="Curl (3d Buffer)" filename="%VVVV%\packs\InstanceNoodles\nodes\modules\Compute\3D Buffer\Curl (3D Buffer)\Curl (3D Buffer).v4p" nodename="Curl (3d Buffer)" componentmode="Hidden" id="49">
-   <BOUNDS type="Node" left="7815" top="9825" width="100" height="100">
-   </BOUNDS>
-   </NODE>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="50" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="9825" top="2415" width="795" height="240">
    </BOUNDS>
    <BOUNDS type="Node" left="9825" top="2415" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.1">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.5">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -540,22 +534,12 @@
    </NODE>
    <LINK srcnodeid="50" srcpinname="Y Output Value" dstnodeid="39" dstpinname="Data">
    </LINK>
-   <NODE systemname="Integrate (Differential)" nodename="Integrate (Differential)" componentmode="Hidden" id="52">
-   <BOUNDS type="Node" left="4485" top="4410" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="Position In" slicecount="1" values="1">
-   </PIN>
-   <PIN pinname="Position Out" visible="1">
-   </PIN>
-   <PIN pinname="Reset" slicecount="1" values="0">
-   </PIN>
-   </NODE>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="53" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="8625" top="2190" width="795" height="240">
    </BOUNDS>
    <BOUNDS type="Node" left="8625" top="2190" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.26">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.35">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -564,22 +548,12 @@
    </NODE>
    <LINK srcnodeid="53" srcpinname="Y Output Value" dstnodeid="31" dstpinname="Data">
    </LINK>
-   <LINK srcnodeid="2" srcpinname="Size Buffer" dstnodeid="3" dstpinname="Size Buffer">
-   </LINK>
-   <NODE systemname="Random (Value)" nodename="Random (Value)" componentmode="Hidden" id="54">
-   <BOUNDS type="Node" left="4920" top="3195" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="Output" visible="1">
-   </PIN>
-   <PIN pinname="Scale" slicecount="1" values="10">
-   </PIN>
-   </NODE>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="55" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="3960" top="1710" width="795" height="240">
    </BOUNDS>
    <BOUNDS type="Node" left="3960" top="1710" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="20">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="10">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -594,20 +568,30 @@
    </LINK>
    <LINK srcnodeid="55" srcpinname="Y Output Value" dstnodeid="0" dstpinname="LifeVariance">
    </LINK>
-   <LINK srcnodeid="30" srcpinname="Output" dstnodeid="53" dstpinname="Y Input Value">
-   </LINK>
    <NODE systemname="AddNoiseForce (GPUParticle)" filename="..\nodes\AddNoiseForce (GPUParticle).v4p" nodename="AddNoiseForce (GPUParticle)" componentmode="Hidden" id="57">
-   <BOUNDS type="Node" left="3945" top="6150" width="100" height="100">
+   <BOUNDS type="Node" left="4110" top="5820" width="100" height="100">
    </BOUNDS>
-   <BOUNDS type="Window" left="24225" top="12465" width="7140" height="5235">
+   <BOUNDS type="Window" left="24225" top="12465" width="9630" height="5595">
    </BOUNDS>
    <PIN pinname="Technique" slicecount="1" values="Curl">
    </PIN>
-   <PIN pinname="freq" slicecount="1" values="1">
+   <PIN pinname="freq" slicecount="1" values="0.28">
    </PIN>
-   <PIN pinname="amplitude" slicecount="1" values="2">
+   <PIN pinname="amplitude" slicecount="1" values="0.4">
    </PIN>
    <PIN pinname="offsetXYZ" visible="1" slicecount="3" values="374.240054620066,185.337846250219,10">
+   </PIN>
+   <PIN pinname="Persistence" slicecount="1" values="1.4">
+   </PIN>
+   <PIN pinname="Amplitude" slicecount="1" values="1.8">
+   </PIN>
+   <PIN pinname="TimeInc" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="OffsetXYZ" visible="1" slicecount="3" values="0,0,0">
+   </PIN>
+   <PIN pinname="Frequency" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Persistence (Curl)" slicecount="1" values="0.75">
    </PIN>
    </NODE>
    <LINK srcnodeid="57" srcpinname="Layer" dstnodeid="45" dstpinname="Layer 1">
@@ -616,50 +600,52 @@
    </LINK>
    <LINK srcnodeid="0" srcpinname="AliveCount" dstnodeid="57" dstpinname="Count">
    </LINK>
-   <LINK srcnodeid="40" srcpinname="Output" dstnodeid="50" dstpinname="Y Input Value">
-   </LINK>
-   <NODE systemname="Integrate (Differential)" nodename="Integrate (Differential)" componentmode="Hidden" id="58">
-   <BOUNDS type="Node" left="4710" top="4050" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="Position In" slicecount="1" values="0.5">
-   </PIN>
-   <PIN pinname="Position Out" visible="1">
-   </PIN>
-   <PIN pinname="Reset" slicecount="1" values="0">
-   </PIN>
-   </NODE>
    <NODE systemname="Vector (3d Join)" nodename="Vector (3d Join)" componentmode="Hidden" id="59">
    <BOUNDS type="Node" left="8115" top="3765" width="100" height="100">
    </BOUNDS>
+   <PIN pinname="Y" slicecount="1" values="0.05">
+   </PIN>
    </NODE>
    <LINK srcnodeid="59" srcpinname="XYZ" dstnodeid="27" dstpinname="DataXYZ">
    </LINK>
-   <NODE systemname="Vector (3d Join)" nodename="Vector (3d Join)" componentmode="Hidden" id="60">
-   <BOUNDS type="Node" left="4635" top="5010" width="100" height="100">
+   <LINK srcnodeid="30" srcpinname="Output" dstnodeid="53" dstpinname="Y Input Value">
+   </LINK>
+   <LINK srcnodeid="36" srcpinname="Value Buffer" dstnodeid="3" dstpinname="Size Buffer">
+   </LINK>
+   <LINK srcnodeid="35" srcpinname="1 to 0 Buffer" dstnodeid="36" dstpinname="Value Buffer A">
+   </LINK>
+   <NODE systemname="Multiply (Transform)" nodename="Multiply (Transform)" componentmode="Hidden" id="63">
+   <BOUNDS type="Node" left="5325" top="10860" width="100" height="100">
    </BOUNDS>
-   <PIN pinname="Z" visible="1">
+   <PIN pinname="Transform In 1" visible="1" slicecount="1" values="||">
    </PIN>
-   <PIN pinname="X" visible="1">
+   <PIN pinname="Transform In 2" visible="1" slicecount="1" values="||">
    </PIN>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Rotate (Transform)" nodename="Rotate (Transform)" componentmode="Hidden" id="64">
+   <BOUNDS type="Node" left="5745" top="10170" width="100" height="100">
+   </BOUNDS>
    <PIN pinname="Y" visible="1">
    </PIN>
-   </NODE>
-   <LINK srcnodeid="60" srcpinname="XYZ" dstnodeid="57" dstpinname="offsetXYZ">
-   </LINK>
-   <LINK srcnodeid="52" srcpinname="Position Out" dstnodeid="60" dstpinname="Z">
-   </LINK>
-   <LINK srcnodeid="58" srcpinname="Position Out" dstnodeid="60" dstpinname="X">
-   </LINK>
-   <NODE systemname="Integrate (Differential)" nodename="Integrate (Differential)" componentmode="Hidden" id="61">
-   <BOUNDS type="Node" left="5265" top="4575" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="Position In" slicecount="1" values="1">
+   <PIN pinname="Transform Out" visible="1">
    </PIN>
+   </NODE>
+   <NODE systemname="Integrate (Differential)" nodename="Integrate (Differential)" componentmode="Hidden" id="65">
+   <BOUNDS type="Node" left="6090" top="9375" width="100" height="100">
+   </BOUNDS>
    <PIN pinname="Position Out" visible="1">
    </PIN>
-   <PIN pinname="Reset" slicecount="1" values="0">
+   <PIN pinname="Position In" slicecount="1" values="0.05">
    </PIN>
    </NODE>
-   <LINK srcnodeid="61" srcpinname="Position Out" dstnodeid="60" dstpinname="Y">
+   <LINK srcnodeid="65" srcpinname="Position Out" dstnodeid="64" dstpinname="Y">
+   </LINK>
+   <LINK srcnodeid="63" srcpinname="Transform Out" dstnodeid="16" dstpinname="View">
+   </LINK>
+   <LINK srcnodeid="64" srcpinname="Transform Out" dstnodeid="63" dstpinname="Transform In 1">
+   </LINK>
+   <LINK srcnodeid="10" srcpinname="View" dstnodeid="63" dstpinname="Transform In 2">
    </LINK>
    </PATCH>

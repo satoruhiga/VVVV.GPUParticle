@@ -36,8 +36,11 @@ void CS_Solve(
 	
 	uint ID = IDs[dtid.x];
 	Particle p = Output[ID];
-	p.Velocity += p.Force * p.Mass;
-	p.Position += p.Velocity * p.Mass;
+	
+	float d = p.Mass * 0.1;
+	
+	p.Velocity += p.Force * d;
+	p.Position += p.Velocity * d;
 	p.Force = float3(0, 0, 0);
 	Output[ID] = p;
 }
