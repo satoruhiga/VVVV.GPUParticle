@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta34.2.dtd" >
-   <PATCH nodename="C:\bin\vvvv_contributions\modules\GPUParticle\nodes\ParticleBirth (GPUParticle).v4p" systemname="ParticleBirth" filename="C:\WORK\vvvv\NEP_ImageGenerator\modules\ParticleSystem\ParticleBirth.v4p" scrollx="0" scrolly="0">
+   <PATCH nodename="C:\bin\vvvv_contributions\modules\GPUParticle\nodes\ParticleBirth (GPUParticle).v4p" systemname="ParticleBirth" filename="C:\WORK\vvvv\NEP_ImageGenerator\modules\ParticleSystem\ParticleBirth.v4p" scrollx="0" scrolly="60">
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="0" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="4275" top="1410" width="795" height="240">
    </BOUNDS>
@@ -279,7 +279,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="6330" top="1410" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="3">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -313,7 +313,7 @@
    <NODE systemname="UpdateIDs" filename="UpdateIDs.v4p" nodename="UpdateIDs.v4p" componentmode="Hidden" id="13">
    <BOUNDS type="Node" left="2310" top="7470" width="100" height="100">
    </BOUNDS>
-   <BOUNDS type="Window" left="12630" top="13815" width="11790" height="6435">
+   <BOUNDS type="Window" left="18480" top="12750" width="11790" height="6435">
    </BOUNDS>
    <PIN pinname="Data" visible="1">
    </PIN>
@@ -523,7 +523,7 @@
    <NODE systemname="CS_FilterAgeLife (DX11.Effect)" filename="CS_FilterAgeLife.fx" nodename="CS_FilterAgeLife (DX11.Effect)" componentmode="Hidden" id="35">
    <BOUNDS type="Node" left="2565" top="10680" width="100" height="100">
    </BOUNDS>
-   <PIN pinname="Input" visible="1">
+   <PIN pinname="Input" visible="1" slicecount="1" values="||">
    </PIN>
    <PIN pinname="IDs" visible="1">
    </PIN>
@@ -534,12 +534,6 @@
    <PIN pinname="Geometry" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="2" srcpinname="Buffers" dstnodeid="35" dstpinname="Input" hiddenwhenlocked="1" linkstyle="Bezier">
-   <LINKPOINT x="6045" y="9380">
-   </LINKPOINT>
-   <LINKPOINT x="3630" y="9580">
-   </LINKPOINT>
-   </LINK>
    <LINK srcnodeid="13" srcpinname="AliveIDs" dstnodeid="35" dstpinname="IDs" hiddenwhenlocked="1" linkstyle="Bezier">
    <LINKPOINT x="3090" y="9110">
    </LINKPOINT>
@@ -551,9 +545,9 @@
    </BOUNDS>
    <PIN pinname="Layer" visible="1">
    </PIN>
-   <PIN pinname="Reset Counter" visible="1">
+   <PIN pinname="Reset Counter" visible="1" slicecount="1" values="0">
    </PIN>
-   <PIN pinname="Appendable" slicecount="1" values="1">
+   <PIN pinname="Appendable" slicecount="1" values="0">
    </PIN>
    <PIN pinname="Stride" slicecount="1" values="8">
    </PIN>
@@ -566,30 +560,6 @@
    <LINKPOINT x="2595" y="11010">
    </LINKPOINT>
    <LINKPOINT x="2595" y="11010">
-   </LINKPOINT>
-   </LINK>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="37" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Box" left="1920" top="11070" width="285" height="240">
-   </BOUNDS>
-   <BOUNDS type="Node" left="1920" top="11070" width="0" height="0">
-   </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
-   </PIN>
-   <PIN pinname="Units" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Precision" slicecount="1" values="4">
-   </PIN>
-   <PIN pinname="Value Type" slicecount="1" values="Boolean">
-   </PIN>
-   <PIN pinname="Behavior" slicecount="1" values="Toggle">
-   </PIN>
-   <PIN pinname="X Input Value" slicecount="1" values="1">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="37" srcpinname="Y Output Value" dstnodeid="36" dstpinname="Reset Counter" hiddenwhenlocked="1" linkstyle="Bezier">
-   <LINKPOINT x="1980" y="11175">
-   </LINKPOINT>
-   <LINKPOINT x="2265" y="11175">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="36" srcpinname="Buffers" dstnodeid="20" dstpinname="Input Node" hiddenwhenlocked="1" linkstyle="Bezier">
@@ -668,4 +638,10 @@
    <PIN pinname="String Type" slicecount="1" values="MultiLine">
    </PIN>
    </NODE>
+   <LINK srcnodeid="2" srcpinname="Buffers" dstnodeid="35" dstpinname="Input" hiddenwhenlocked="1" linkstyle="Bezier">
+   <LINKPOINT x="6045" y="9480">
+   </LINKPOINT>
+   <LINKPOINT x="3630" y="9480">
+   </LINKPOINT>
+   </LINK>
    </PATCH>

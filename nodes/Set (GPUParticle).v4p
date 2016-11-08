@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta34.2.dtd" >
-   <PATCH nodename="C:\WORK\vvvv\TestParticle\GPUParticle\Set (GPUParticle).v4p" systemname="Set (GPUParticle)" filename="C:\WORK\vvvv\TestParticle\GPUParticle\Set (GPUParticle).v4p">
+   <PATCH nodename="C:\bin\vvvv_contributions\modules\GPUParticle\nodes\Set (GPUParticle).v4p" systemname="Set (GPUParticle)" filename="C:\WORK\vvvv\TestParticle\GPUParticle\Set (GPUParticle).v4p">
    <NODE nodename="IOBox (Enumerations)" componentmode="InABox" id="0" systemname="IOBox (Enumerations)">
    <BOUNDS type="Box" left="2940" top="1980" width="480" height="240">
    </BOUNDS>
@@ -39,43 +39,43 @@
    <NODE id="3" systemname="IOBox (Value Advanced)" componentmode="InABox" nodename="IOBox (Value Advanced)">
    <PIN pinname="Descriptive Name" slicecount="1" values="Count">
    </PIN>
-   <BOUNDS type="Box" left="3930" top="495" width="750" height="240">
+   <BOUNDS type="Box" left="2205" top="465" width="750" height="240">
    </BOUNDS>
-   <BOUNDS type="Node" left="3930" top="495" width="750" height="240">
+   <BOUNDS type="Node" left="2205" top="465" width="750" height="240">
    </BOUNDS>
    </NODE>
    <LINK srcnodeid="3" srcpinname="Y Output Value" dstnodeid="2" dstpinname="ThreadCount" linkstyle="Bezier">
-   <LINKPOINT x="3915" y="1500">
+   <LINKPOINT x="2235" y="1493">
    </LINKPOINT>
-   <LINKPOINT x="2415" y="1500">
+   <LINKPOINT x="2370" y="1493">
    </LINKPOINT>
    </LINK>
    <NODE id="4" systemname="IOBox (Node)" componentmode="InABox" nodename="IOBox (Node)">
    <PIN pinname="Descriptive Name" slicecount="1" values="|Target IDs Buffer|">
    </PIN>
-   <BOUNDS type="Box" left="2340" top="495" width="750" height="240">
+   <BOUNDS type="Box" left="615" top="465" width="750" height="240">
    </BOUNDS>
-   <BOUNDS type="Node" left="2340" top="495" width="750" height="240">
+   <BOUNDS type="Node" left="615" top="465" width="750" height="240">
    </BOUNDS>
    </NODE>
    <LINK srcnodeid="4" srcpinname="Output Node" dstnodeid="2" dstpinname="IDs" linkstyle="Bezier">
-   <LINKPOINT x="2370" y="1508">
+   <LINKPOINT x="675" y="1478">
    </LINKPOINT>
-   <LINKPOINT x="2565" y="1508">
+   <LINKPOINT x="2535" y="1478">
    </LINKPOINT>
    </LINK>
    <NODE id="5" systemname="IOBox (Node)" componentmode="InABox" nodename="IOBox (Node)">
    <PIN pinname="Descriptive Name" slicecount="1" values="|Source Particles Buffer|">
    </PIN>
-   <BOUNDS type="Box" left="435" top="495" width="750" height="240">
+   <BOUNDS type="Box" left="3690" top="465" width="750" height="240">
    </BOUNDS>
-   <BOUNDS type="Node" left="435" top="495" width="750" height="240">
+   <BOUNDS type="Node" left="3690" top="465" width="750" height="240">
    </BOUNDS>
    </NODE>
    <LINK srcnodeid="5" srcpinname="Output Node" dstnodeid="2" dstpinname="Input" linkstyle="Bezier">
-   <LINKPOINT x="495" y="1500">
+   <LINKPOINT x="3690" y="1493">
    </LINKPOINT>
-   <LINKPOINT x="2730" y="1500">
+   <LINKPOINT x="2790" y="1493">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="0" srcpinname="Output Enum" dstnodeid="2" dstpinname="Technique">
@@ -91,9 +91,9 @@
    <LINK srcnodeid="2" srcpinname="Layer" dstnodeid="6" dstpinname="Input Node">
    </LINK>
    <LINK srcnodeid="3" srcpinname="Y Output Value" dstnodeid="1" dstpinname="Count" linkstyle="Bezier">
-   <LINKPOINT x="3930" y="1163">
+   <LINKPOINT x="2220" y="1155">
    </LINKPOINT>
-   <LINKPOINT x="2025" y="1163">
+   <LINKPOINT x="1995" y="1155">
    </LINKPOINT>
    </LINK>
    <BOUNDS type="Window" left="31710" top="19035" width="5760" height="4395">

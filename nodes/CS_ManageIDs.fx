@@ -20,10 +20,8 @@ void CS_IsDead(
 	}
 }
 
-technique11 IsDead
-{
-	pass P0
-	{
+technique11 IsDead {
+	pass P0 {
 		SetComputeShader( CompileShader( cs_5_0, CS_IsDead() ) );
 	}
 }
@@ -43,10 +41,8 @@ void CS_IsAlive(
 	}
 }
 
-technique11 IsAlive
-{
-	pass P0
-	{
+technique11 IsAlive {
+	pass P0 {
 		SetComputeShader( CompileShader( cs_5_0, CS_IsAlive() ) );
 	}
 }
@@ -65,10 +61,8 @@ void CS_FilterIDs(
 	Pool.Append(id);
 }
 
-technique11 FilterIDs
-{
-	pass P0
-	{
+technique11 FilterIDs {
+	pass P0 {
 		SetComputeShader( CompileShader( cs_5_0, CS_FilterIDs() ) );
 	}
 }

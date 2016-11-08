@@ -19,28 +19,35 @@ void CS_Join(
 	if (dtid.x >= ThreadCount) { return; }
 	Particle p = (Particle)0;
 	
-	p.Position = Position[dtid.x];
-	p.Velocity = Velocity[dtid.x];
+	uint size, dummy;
 	
-	///
+	Position.GetDimensions(size, dummy);
+	if (size > 0)
+		p.Position = Position[dtid.x % size];
+	else
+		p.Position = float3(0, 0, 0);
 	
-	uint colorCount, sizeCount, massCount, dummy;
+	Velocity.GetDimensions(size, dummy);
+	if (size > 0)
+		p.Velocity = Velocity[dtid.x % size];
+	else
+		p.Velocity = float3(0, 0, 0);
 	
-	Color.GetDimensions(colorCount, dummy);
-	if (colorCount > 0)
-		p.Color = Color[dtid.x];
+	Color.GetDimensions(size, dummy);
+	if (size > 0)
+		p.Color = Color[dtid.x % size];
 	else
 		p.Color = float4(1, 1, 1, 1);
 	
-	Size.GetDimensions(sizeCount, dummy);
-	if (sizeCount > 0)
-		p.Size = Size[dtid.x];
+	Size.GetDimensions(size, dummy);
+	if (size > 0)
+		p.Size = Size[dtid.x % size];
 	else
 		p.Size = 0.1;
 	
-	Mass.GetDimensions(massCount, dummy);
-	if (massCount > 0)
-		p.Mass = Mass[dtid.x];
+	Mass.GetDimensions(size, dummy);
+	if (size > 0)
+		p.Mass = Mass[dtid.x % size];
 	else
 		p.Mass = 1;
 	

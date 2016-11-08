@@ -4,7 +4,7 @@ uint ThreadCount;
 
 StructuredBuffer<uint> IDs;
 StructuredBuffer<Particle> Input;
-AppendStructuredBuffer<Particle> Output : BACKBUFFER;
+RWStructuredBuffer<Particle> Output : BACKBUFFER;
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -16,7 +16,7 @@ void CS_Update(
 	
 	uint ID = IDs[dtid.x];
 	Particle p = Input[ID];
-	Output.Append(p);
+	Output[dtid.x] = p;
 }
 
 technique11 Update {

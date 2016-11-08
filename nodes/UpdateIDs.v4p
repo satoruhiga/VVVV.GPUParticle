@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta34.2.dtd" >
-   <PATCH nodename="C:\WORK\vvvv\TestParticle\GPUParticle\UpdateIDs.v4p" systemname="UpdateIDs" filename="C:\WORK\vvvv\NEP_ImageGenerator\dx11\UpdateIDs.v4p">
+   <PATCH nodename="C:\bin\vvvv_contributions\modules\GPUParticle\nodes\UpdateIDs.v4p" systemname="UpdateIDs" filename="C:\WORK\vvvv\NEP_ImageGenerator\dx11\UpdateIDs.v4p">
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="1" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="2490" top="885" width="795" height="240">
    </BOUNDS>
@@ -62,7 +62,7 @@
    <PIN pinname="Y Input Value" visible="1" slicecount="1" values="2">
    </PIN>
    </NODE>
-   <BOUNDS type="Window" left="12630" top="13815" width="11790" height="6435">
+   <BOUNDS type="Window" left="18480" top="12750" width="11790" height="6435">
    </BOUNDS>
    <PACK Name="addonpack" Version="34.1.0">
    </PACK>
