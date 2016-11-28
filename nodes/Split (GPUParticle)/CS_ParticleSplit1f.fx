@@ -48,7 +48,7 @@ void CS_SplitPct01(
 {
 	if (dtid.x >= ThreadCount) { return; }
 	Particle p = Particles[dtid.x];
-	Output[dtid.x] = p.Pct;
+	Output[dtid.x] = clamp(p.Age / p.Life, 0, 1);
 }
 
 technique11 SplitPct01 {
@@ -65,7 +65,7 @@ void CS_SplitPct10(
 {
 	if (dtid.x >= ThreadCount) { return; }
 	Particle p = Particles[dtid.x];
-	Output[dtid.x] = 1 - p.Pct;
+	Output[dtid.x] = 1 - clamp(p.Age / p.Life, 0, 1);
 }
 
 technique11 SplitPct10 {
