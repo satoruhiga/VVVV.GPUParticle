@@ -1,9 +1,9 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta34.2.dtd" >
    <PATCH nodename="C:\bin\vvvv_contributions\modules\GPUParticle\nodes\Solver (GPUParticle)\Solver (GPUParticle).v4p" systemname="Solver (GPUParticle)" filename="C:\WORK\vvvv\TestParticle\GPUParticle\Solver (GPUParticle).v4p" scrollx="0" scrolly="0">
    <NODE nodename="IOBox (Node)" componentmode="InABox" id="5" systemname="IOBox (Node)">
-   <BOUNDS type="Box" left="4455" top="735" width="795" height="240">
+   <BOUNDS type="Box" left="4905" top="735" width="795" height="240">
    </BOUNDS>
-   <BOUNDS type="Node" left="4455" top="735" width="0" height="0">
+   <BOUNDS type="Node" left="4905" top="735" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Input Node" slicecount="1" visible="1" values="||">
    </PIN>
@@ -12,7 +12,7 @@
    <PIN pinname="Output Node" visible="1">
    </PIN>
    </NODE>
-   <BOUNDS type="Window" left="8895" top="11145" width="9195" height="11715">
+   <BOUNDS type="Window" left="15885" top="20025" width="9435" height="10995">
    </BOUNDS>
    <PACK Name="addonpack" Version="34.1.0">
    </PACK>
@@ -109,9 +109,9 @@
    </PIN>
    </NODE>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="58" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Box" left="7575" top="735" width="480" height="480">
+   <BOUNDS type="Box" left="7725" top="735" width="480" height="480">
    </BOUNDS>
-   <BOUNDS type="Node" left="7575" top="735" width="0" height="0">
+   <BOUNDS type="Node" left="7725" top="735" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
    </PIN>
@@ -213,9 +213,9 @@
    </LINKPOINT>
    </LINK>
    <NODE nodename="IOBox (Node)" componentmode="InABox" id="75" systemname="IOBox (Node)">
-   <BOUNDS type="Box" left="5880" top="735" width="795" height="240">
+   <BOUNDS type="Box" left="6330" top="735" width="795" height="240">
    </BOUNDS>
-   <BOUNDS type="Node" left="5880" top="735" width="0" height="0">
+   <BOUNDS type="Node" left="6330" top="735" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Input Node" slicecount="1" visible="1" values="||">
    </PIN>
@@ -247,15 +247,15 @@
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="5" srcpinname="Output Node" dstnodeid="61" dstpinname="Layer 3" linkstyle="Bezier">
-   <LINKPOINT x="4470" y="2700">
+   <LINKPOINT x="4770" y="2700">
    </LINKPOINT>
-   <LINKPOINT x="3360" y="2700">
+   <LINKPOINT x="3510" y="2700">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="75" srcpinname="Output Node" dstnodeid="61" dstpinname="Layer 4" linkstyle="Bezier">
-   <LINKPOINT x="5865" y="2685">
+   <LINKPOINT x="6165" y="2685">
    </LINKPOINT>
-   <LINKPOINT x="3555" y="2685">
+   <LINKPOINT x="3705" y="2685">
    </LINKPOINT>
    </LINK>
    <NODE systemname="Change (Animation)" nodename="Change (Animation)" componentmode="Hidden" id="79">
@@ -283,9 +283,9 @@
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="58" srcpinname="Y Output Value" dstnodeid="78" dstpinname="Input 2" linkstyle="Bezier">
-   <LINKPOINT x="7560" y="1958">
+   <LINKPOINT x="7660" y="1958">
    </LINKPOINT>
-   <LINKPOINT x="6090" y="1958">
+   <LINKPOINT x="6140" y="1958">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="57" srcpinname="Y Output Value" dstnodeid="79" dstpinname="Input" linkstyle="Bezier" hiddenwhenlocked="1">
@@ -338,60 +338,16 @@
    <PIN pinname="Input Enum" slicecount="1" visible="1" values="Update">
    </PIN>
    </NODE>
-   <NODE systemname="CS_Update (DX11.Effect)" filename="CS_Update.fx" nodename="CS_Update (DX11.Effect)" componentmode="Hidden" id="83">
-   <BOUNDS type="Node" left="2010" top="3540" width="100" height="100">
-   </BOUNDS>
-   <BOUNDS type="Box" left="2010" top="3540">
-   </BOUNDS>
-   <PIN pinname="Layer" visible="1">
-   </PIN>
-   <PIN pinname="Count" visible="1">
-   </PIN>
-   <PIN pinname="TimeInc" visible="1">
-   </PIN>
-   <PIN pinname="Geometry" visible="1">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="82" srcpinname="Output Enum" dstnodeid="83" dstpinname="Technique" linkstyle="Bezier">
-   <LINKPOINT x="3015" y="3510">
-   </LINKPOINT>
-   <LINKPOINT x="3015" y="3510">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="83" srcpinname="Layer" dstnodeid="61" dstpinname="Layer 1" linkstyle="Bezier">
-   <LINKPOINT x="2070" y="4103">
-   </LINKPOINT>
-   <LINKPOINT x="2970" y="4103">
-   </LINKPOINT>
-   </LINK>
    <LINK srcnodeid="80" srcpinname="Layer" dstnodeid="61" dstpinname="Layer 2" linkstyle="Bezier">
    <LINKPOINT x="3765" y="4110">
    </LINKPOINT>
    <LINKPOINT x="3210" y="4110">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="57" srcpinname="Y Output Value" dstnodeid="83" dstpinname="Count" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="1665" y="2258">
-   </LINKPOINT>
-   <LINKPOINT x="2670" y="2258">
-   </LINKPOINT>
-   </LINK>
    <LINK srcnodeid="57" srcpinname="Y Output Value" dstnodeid="80" dstpinname="Count" linkstyle="Bezier" hiddenwhenlocked="1">
    <LINKPOINT x="1680" y="2243">
    </LINKPOINT>
    <LINKPOINT x="4410" y="2243">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="59" srcpinname="Y Output Value" dstnodeid="83" dstpinname="TimeInc" linkstyle="Bezier">
-   <LINKPOINT x="2760" y="2250">
-   </LINKPOINT>
-   <LINKPOINT x="2835" y="2250">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="76" srcpinname="Geometry Out" dstnodeid="83" dstpinname="Geometry" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="675" y="2828">
-   </LINKPOINT>
-   <LINKPOINT x="2325" y="2828">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="76" srcpinname="Geometry Out" dstnodeid="80" dstpinname="Geometry" linkstyle="Bezier" hiddenwhenlocked="1">
@@ -492,6 +448,42 @@
    <LINKPOINT x="660" y="4965">
    </LINKPOINT>
    <LINKPOINT x="3135" y="4965">
+   </LINKPOINT>
+   </LINK>
+   <NODE systemname="CS_Update (DX11.Effect)" filename="CS_Update.fx" nodename="CS_Update (DX11.Effect)" componentmode="Hidden" id="130">
+   <BOUNDS type="Node" left="2010" top="3540" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="2010" top="3540">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="82" srcpinname="Output Enum" dstnodeid="130" dstpinname="Technique" linkstyle="Bezier">
+   <LINKPOINT x="3015" y="3510">
+   </LINKPOINT>
+   <LINKPOINT x="3015" y="3510">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="130" srcpinname="Layer" dstnodeid="61" dstpinname="Layer 1" linkstyle="Bezier">
+   <LINKPOINT x="2070" y="4103">
+   </LINKPOINT>
+   <LINKPOINT x="2970" y="4103">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="57" srcpinname="Y Output Value" dstnodeid="130" dstpinname="Count" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="1665" y="2258">
+   </LINKPOINT>
+   <LINKPOINT x="2670" y="2258">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="59" srcpinname="Y Output Value" dstnodeid="130" dstpinname="TimeInc" linkstyle="Bezier">
+   <LINKPOINT x="2760" y="2250">
+   </LINKPOINT>
+   <LINKPOINT x="2835" y="2250">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="76" srcpinname="Geometry Out" dstnodeid="130" dstpinname="Geometry" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="675" y="2828">
+   </LINKPOINT>
+   <LINKPOINT x="2325" y="2828">
    </LINKPOINT>
    </LINK>
    </PATCH>

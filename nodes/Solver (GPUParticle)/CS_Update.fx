@@ -3,6 +3,8 @@
 uint Count;
 float TimeInc;
 
+static const float InvTargetTime = 1.0 / 60.0;
+
 RWStructuredBuffer<Particle> Particles : BACKBUFFER;
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -17,9 +19,11 @@ void CS_Update(
 
 	if (isAlive(p))
 	{
+		float TimeRatio = TimeInc / InvTargetTime; 
+		
 		{
 			// Update position
-			float d = p.Mass * 0.1;
+			float d = p.Mass * 0.1 * TimeRatio;
 			p.Velocity += p.Force * d;
 			p.Position += p.Velocity * d;
 			p.Force = float3(0, 0, 0);
