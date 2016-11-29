@@ -1,8 +1,6 @@
-#include "../common/CS_PID.fxh"
 #include "../common/CS_ParticleData.fxh"
 
-StructuredBuffer<PID> IDs;
-ByteAddressBuffer InputCountBuffer;
+uint Count;
 
 StructuredBuffer<Particle> Input;
 AppendStructuredBuffer<Particle> Output : BACKBUFFER;
@@ -13,12 +11,13 @@ AppendStructuredBuffer<Particle> Output : BACKBUFFER;
 void CS(
 	uint3 dtid : SV_DispatchThreadID)
 {
-	uint cnt = InputCountBuffer.Load(0);
-	if (dtid.x >= cnt) return;
+	if (dtid.x >= Count) return;
 	
-	uint ID = IDs[dtid.x].ID;
-	Particle p = Input[ID];
-	Output.Append(p);
+	Particle p = Input[dtid.x];
+	if (isAlive(p))
+	{
+		Output.Append(p);
+	}
 }
 
 technique11 Update {

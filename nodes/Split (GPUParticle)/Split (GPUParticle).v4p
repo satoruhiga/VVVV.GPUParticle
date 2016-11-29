@@ -140,7 +140,7 @@
    </LINK>
    <LINK srcnodeid="6" srcpinname="Buffers" dstnodeid="11" dstpinname="Input Node">
    </LINK>
-   <BOUNDS type="Window" left="15915" top="14025" width="15360" height="5625">
+   <BOUNDS type="Window" left="15900" top="19335" width="15360" height="5625">
    </BOUNDS>
    <PACK Name="addonpack" Version="34.1.0">
    </PACK>
@@ -297,7 +297,7 @@
    </PIN>
    <PIN pinname="Particles" visible="1" slicecount="1" values="||">
    </PIN>
-   <PIN pinname="ThreadCount" visible="1">
+   <PIN pinname="ThreadCount" visible="1" slicecount="1" values="0">
    </PIN>
    <PIN pinname="Enabled" visible="1" slicecount="1" values="1">
    </PIN>
