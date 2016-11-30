@@ -1,0 +1,95 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta34.2.dtd" >
+   <PATCH nodename="C:\bin\vvvv_contributions\modules\GPUParticle\nodes\CCID (GPUParticle).v4p" systemname="CID (GPUParticle)" filename="C:\bin\vvvv_contributions\modules\GPUParticle\nodes\CID (GPUParticle).v4p">
+   <NODE systemname="CopyCounter (DX11.Buffer)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="CopyCounter (DX11.Buffer)" componentmode="Hidden" id="0">
+   <BOUNDS type="Node" left="3405" top="1545" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Buffer In" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Buffer Out" visible="1">
+   </PIN>
+   <BOUNDS type="Box" left="3405" top="1545">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="DispatchIndirect (DX11.Drawer 1D)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="DispatchIndirect (DX11.Drawer 1D)" componentmode="Hidden" id="1">
+   <BOUNDS type="Node" left="480" top="1545" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Argument Buffer" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Warp Size" slicecount="1" values="64">
+   </PIN>
+   <PIN pinname="Geometry Out" visible="1">
+   </PIN>
+   <BOUNDS type="Box" left="480" top="1545">
+   </BOUNDS>
+   </NODE>
+   <NODE id="2" systemname="IOBox (Node)" componentmode="InABox" nodename="IOBox (Node)">
+   <PIN pinname="Descriptive Name" slicecount="1" values="IDs">
+   </PIN>
+   <BOUNDS type="Box" left="1890" top="455" width="750" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="1890" top="455" width="750" height="240">
+   </BOUNDS>
+   <PIN pinname="Output Node" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="2" srcpinname="Output Node" dstnodeid="1" dstpinname="Argument Buffer" linkstyle="Bezier">
+   <LINKPOINT x="1905" y="1110">
+   </LINKPOINT>
+   <LINKPOINT x="1605" y="1110">
+   </LINKPOINT>
+   </LINK>
+   <NODE id="3" systemname="IOBox (Node)" componentmode="InABox" nodename="IOBox (Node)">
+   <PIN pinname="Descriptive Name" slicecount="1" values="Dispatcher">
+   </PIN>
+   <BOUNDS type="Box" left="480" top="2145" width="750" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="480" top="2145" width="750" height="240">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="1" srcpinname="Geometry Out" dstnodeid="3" dstpinname="Input Node" linkstyle="Bezier">
+   <LINKPOINT x="510" y="1980">
+   </LINKPOINT>
+   <LINKPOINT x="510" y="1980">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="2" srcpinname="Output Node" dstnodeid="0" dstpinname="Buffer In" linkstyle="Bezier">
+   <LINKPOINT x="1950" y="1103">
+   </LINKPOINT>
+   <LINKPOINT x="3405" y="1103">
+   </LINKPOINT>
+   </LINK>
+   <NODE id="4" systemname="IOBox (Node)" componentmode="InABox" nodename="IOBox (Node)">
+   <PIN pinname="Descriptive Name" slicecount="1" values="CopyCounterBuffer">
+   </PIN>
+   <BOUNDS type="Box" left="3405" top="2145" width="750" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="3405" top="2145" width="750" height="240">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="0" srcpinname="Buffer Out" dstnodeid="4" dstpinname="Input Node" linkstyle="Bezier">
+   <LINKPOINT x="3435" y="1980">
+   </LINKPOINT>
+   <LINKPOINT x="3435" y="1980">
+   </LINKPOINT>
+   </LINK>
+   <BOUNDS type="Window" left="12675" top="4335" width="5475" height="3765">
+   </BOUNDS>
+   <PACK Name="vvvv-ZeroMQ" Version="0.5.0">
+   </PACK>
+   <PACK Name="addonpack" Version="34.1.0">
+   </PACK>
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="5" systemname="IOBox (Node)">
+   <BOUNDS type="Box" left="2235" top="2145" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="2235" top="2145" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Descriptive Name" slicecount="1" values="IDs">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="2" srcpinname="Output Node" dstnodeid="5" dstpinname="Input Node" linkstyle="Bezier">
+   <LINKPOINT x="1920" y="1403">
+   </LINKPOINT>
+   <LINKPOINT x="2250" y="1403">
+   </LINKPOINT>
+   </LINK>
+   </PATCH>

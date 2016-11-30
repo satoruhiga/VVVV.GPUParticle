@@ -1,0 +1,131 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta34.2.dtd" >
+   <PATCH nodename="C:\bin\vvvv_contributions\modules\GPUParticle\nodes\ParticleBuffer (GPUParticle)\Set (GPUParticle ParticleBuffer)\Set (GPUParticle ParticleBuffer).v4p" systemname="Solver (GPUParticle)" filename="C:\WORK\vvvv\TestParticle\GPUParticle\Solver (GPUParticle).v4p" scrollx="255" scrolly="15">
+   <BOUNDS type="Window" left="19965" top="7485" width="4380" height="4935">
+   </BOUNDS>
+   <PACK Name="addonpack" Version="34.1.0">
+   </PACK>
+   <PACK Name="vvvv-ZeroMQ" Version="0.5.0">
+   </PACK>
+   <INFO author="" description="" tags="">
+   </INFO>
+   <NODE nodename="IOBox (Enumerations)" componentmode="InABox" id="192" systemname="IOBox (Enumerations)">
+   <BOUNDS type="Box" left="2805" top="1590" width="780" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="2805" top="1590" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input Enum" slicecount="1" visible="1" values="Update">
+   </PIN>
+   </NODE>
+   <NODE systemname="CS_Set (DX11.Effect)" filename="CS_Set.fx" nodename="CS_Set (DX11.Effect)" componentmode="Hidden" id="195">
+   <BOUNDS type="Node" left="1680" top="1935" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="CopyCounterBuffer" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Input" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Geometry" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="IDs" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Layer In" visible="1" slicecount="1" values="||">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="192" srcpinname="Output Enum" dstnodeid="195" dstpinname="Technique">
+   </LINK>
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="196" systemname="IOBox (Node)">
+   <BOUNDS type="Box" left="2655" top="900" width="300" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="2655" top="900" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input Node" slicecount="1" visible="1" values="||">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="ParticleBuffer">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="196" srcpinname="Output Node" dstnodeid="195" dstpinname="Input">
+   </LINK>
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="198" systemname="IOBox (Node)">
+   <BOUNDS type="Box" left="1995" top="900" width="300" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="1995" top="900" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input Node" slicecount="1" visible="1" values="||">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="IDs">
+   </PIN>
+   </NODE>
+   <NODE systemname="CID (GPUParticle Counter Indirect)" filename="..\..\CID (GPUParticle Counter Indirect)\CID (GPUParticle Counter Indirect).v4p" nodename="CID (GPUParticle Counter Indirect)" componentmode="Hidden" id="191" hiddenwhenlocked="1">
+   <BOUNDS type="Node" left="1980" top="1380" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="930" top="525" width="4015" height="3610">
+   </BOUNDS>
+   <BOUNDS type="Window" left="12675" top="4335" width="5475" height="3765">
+   </BOUNDS>
+   <PIN pinname="IDs" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="CopyCounterBuffer" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="191" srcpinname="Dispatcher" dstnodeid="195" dstpinname="Geometry" hiddenwhenlocked="1" linkstyle="Bezier">
+   <LINKPOINT x="2010" y="1785">
+   </LINKPOINT>
+   <LINKPOINT x="2010" y="1785">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="191" srcpinname="IDs" dstnodeid="195" dstpinname="IDs" hiddenwhenlocked="1" linkstyle="Bezier">
+   <LINKPOINT x="2265" y="1778">
+   </LINKPOINT>
+   <LINKPOINT x="2340" y="1778">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="191" srcpinname="CopyCounterBuffer" dstnodeid="195" dstpinname="CopyCounterBuffer" hiddenwhenlocked="1" linkstyle="Bezier">
+   <LINKPOINT x="2520" y="1778">
+   </LINKPOINT>
+   <LINKPOINT x="2520" y="1778">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="198" srcpinname="Output Node" dstnodeid="191" dstpinname="IDs">
+   </LINK>
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="199" systemname="IOBox (Node)">
+   <BOUNDS type="Box" left="975" top="900" width="300" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="975" top="900" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input Node" slicecount="1" visible="1" values="||">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Layer In|">
+   </PIN>
+   <PIN pinname="Output Node" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Cons (DX11.Layer)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Cons (DX11.Layer)" componentmode="Hidden" id="200">
+   <BOUNDS type="Node" left="975" top="2610" width="495" height="270">
+   </BOUNDS>
+   <PIN pinname="Input 1" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Input 2" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <BOUNDS type="Box" left="975" top="2610">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="199" srcpinname="Output Node" dstnodeid="200" dstpinname="Input 1">
+   </LINK>
+   <LINK srcnodeid="195" srcpinname="Layer" dstnodeid="200" dstpinname="Input 2">
+   </LINK>
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="201" systemname="IOBox (Node)">
+   <BOUNDS type="Box" left="975" top="3270" width="300" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="975" top="3270" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Layer">
+   </PIN>
+   <PIN pinname="Input Node" visible="1" slicecount="1" values="||">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="200" srcpinname="Output" dstnodeid="201" dstpinname="Input Node">
+   </LINK>
+   </PATCH>
