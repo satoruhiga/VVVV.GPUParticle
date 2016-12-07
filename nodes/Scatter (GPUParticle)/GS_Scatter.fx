@@ -1,9 +1,12 @@
-float Density = 10;
+ByteAddressBuffer SummedAreaBuffer;
+
+uint Count = 1;
+uint PrimitiveCount = 1;
 
 struct VS_IN_OUT {
 	float3 Pos : POSITION;
 	float3 Normal : NORMAL;
-	float2 TextureCoord : TEXCOORD;
+	float2 TextureCoord : TEXCOORD0;
 };
 
 struct GS_OUT {
@@ -46,13 +49,17 @@ void GS(triangle VS_IN_OUT input[3],
 	float3 v0 = input[1].Pos - input[0].Pos;
 	float3 v1 = input[2].Pos - input[0].Pos;
 	
-	float area = length(cross(v0, v1)) / 2;	
-	int N = min(area * Density * 100, 128);
+	float area = length(cross(v0, v1)) / 2;
+	
+	float SummedArea = asfloat(SummedAreaBuffer.Load(0));
+	float pct = area / SummedArea;
+
+	float N = min(Count * pct, 128) - 1 + rand(pID);
 	
 	for (int i = 0; i < N; i++)
 	{
-		float u = urand(i + pID + 0);
-		float v = urand(i + pID + 1);
+		float u = urand((i * 1.23 + pID));
+		float v = urand((i * 4.56 + pID));
 		
 		if (u + v > 1)
 		{
