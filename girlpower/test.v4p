@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta34.2.dtd" >
-   <PATCH nodename="C:\bin\vvvv_contributions\modules\GPUParticle\girlpower\test.v4p" scrollx="150" scrolly="0">
+   <PATCH nodename="C:\bin\vvvv_45beta34.2_x64\packs\GPUParticle\girlpower\test.v4p" scrollx="150" scrolly="0">
    <BOUNDS type="Window" left="27870" top="3225" width="15300" height="15780">
    </BOUNDS>
    <PACK Name="addonpack" Version="34.1.0">
@@ -76,26 +76,6 @@
    <PIN pinname="Layer Out" visible="1">
    </PIN>
    </NODE>
-   <NODE systemname="Scatter2 (GPUParticle)" filename="..\nodes\Scatter2 (GPUParticle)\Scatter2 (GPUParticle).v4p" nodename="Scatter2 (GPUParticle)" componentmode="InAWindow" id="197">
-   <BOUNDS type="Node" left="3675" top="7470" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="Geometry" visible="1" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Geometry Out" visible="1">
-   </PIN>
-   <BOUNDS type="Window" left="16305" top="2655" width="10200" height="12435">
-   </BOUNDS>
-   <PIN pinname="Element Count" visible="1">
-   </PIN>
-   <PIN pinname="Primitives Written" visible="1">
-   </PIN>
-   </NODE>
-   <NODE systemname="Box (DX11.Geometry)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Box (DX11.Geometry)" componentmode="Hidden" id="198">
-   <BOUNDS type="Node" left="3630" top="6570" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="Geometry Out" visible="1">
-   </PIN>
-   </NODE>
    <NODE systemname="Constant (DX11.Effect)" filename="%VVVV%\packs\dx11\nodes\dx11\Constant.fx" nodename="Constant (DX11.Effect)" componentmode="Hidden" id="199">
    <BOUNDS type="Node" left="3000" top="8535" width="100" height="100">
    </BOUNDS>
@@ -110,8 +90,6 @@
    </NODE>
    <LINK srcnodeid="199" srcpinname="Layer" dstnodeid="149" dstpinname="Layer 2">
    </LINK>
-   <LINK srcnodeid="197" srcpinname="Geometry Out" dstnodeid="199" dstpinname="Geometry">
-   </LINK>
    <NODE systemname="Rasterizer (DX11.RenderState)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Rasterizer (DX11.RenderState)" componentmode="Hidden" id="201">
    <BOUNDS type="Node" left="1800" top="8055" width="100" height="100">
    </BOUNDS>
@@ -121,79 +99,5 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="201" srcpinname="Render State" dstnodeid="199" dstpinname="Render State">
-   </LINK>
-   <NODE systemname="Grid (DX11.Geometry)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Grid (DX11.Geometry)" componentmode="Hidden" id="202">
-   <BOUNDS type="Node" left="4515" top="6525" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="Geometry Out" visible="1">
-   </PIN>
-   <PIN pinname="SizeXY" slicecount="1" values="1">
-   </PIN>
-   <PIN pinname="Resolution X" visible="1">
-   </PIN>
-   <PIN pinname="Resolution Y" visible="1">
-   </PIN>
-   </NODE>
-   <NODE systemname="Scatter (GPUParticle)" filename="..\nodes\Scatter (GPUParticle)\Scatter (GPUParticle).v4p" nodename="Scatter (GPUParticle)" componentmode="InAWindow" id="203">
-   <BOUNDS type="Node" left="7065" top="7200" width="100" height="100">
-   </BOUNDS>
-   <BOUNDS type="Window" left="26310" top="15615" width="7830" height="6600">
-   </BOUNDS>
-   </NODE>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="204" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Box" left="4995" top="6960" width="795" height="240">
-   </BOUNDS>
-   <BOUNDS type="Node" left="4995" top="6960" width="0" height="0">
-   </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="8020">
-   </PIN>
-   <PIN pinname="Units" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Precision" slicecount="1" values="4">
-   </PIN>
-   <PIN pinname="Value Type" slicecount="1" values="Integer">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="204" srcpinname="Y Output Value" dstnodeid="197" dstpinname="Element Count">
-   </LINK>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="205" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Box" left="5055" top="8010" width="795" height="240">
-   </BOUNDS>
-   <BOUNDS type="Node" left="5055" top="8010" width="0" height="0">
-   </BOUNDS>
-   <PIN pinname="Units" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Precision" slicecount="1" values="4">
-   </PIN>
-   <PIN pinname="Value Type" slicecount="1" values="Integer">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="197" srcpinname="Primitives Written" dstnodeid="205" dstpinname="Y Input Value">
-   </LINK>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="206" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Box" left="4860" top="5775" width="795" height="240">
-   </BOUNDS>
-   <BOUNDS type="Node" left="4860" top="5775" width="0" height="0">
-   </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="6">
-   </PIN>
-   <PIN pinname="Units" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Precision" slicecount="1" values="4">
-   </PIN>
-   <PIN pinname="Value Type" slicecount="1" values="Integer">
-   </PIN>
-   <PIN pinname="Y Output Value" visible="1">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="206" srcpinname="Y Output Value" dstnodeid="202" dstpinname="Resolution X">
-   </LINK>
-   <LINK srcnodeid="206" srcpinname="Y Output Value" dstnodeid="202" dstpinname="Resolution Y">
-   </LINK>
-   <NODE systemname="test-1" filename="test-1.v4p" nodename="test-1.v4p" componentmode="Hidden" id="207">
-   <BOUNDS type="Node" left="4995" top="6960" width="100" height="100">
-   </BOUNDS>
-   </NODE>
-   <LINK srcnodeid="198" srcpinname="Geometry Out" dstnodeid="197" dstpinname="Geometry">
    </LINK>
    </PATCH>
