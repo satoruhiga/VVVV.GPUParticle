@@ -1,6 +1,6 @@
 #include "../../common/noiseSimplex.fxh"
-#include "../../common/CS_CID.fxh"
-#include "../CS_ParticleData.fxh"
+#include "../../common/CID.fxh"
+#include "../ParticleData.fxh"
 
 float Time = 0;
 float persistence = 1.0;
@@ -54,8 +54,7 @@ float3 ComputeCurl(float x, float y, float z, float w)
 }
 
 [numthreads(64, 1, 1)]
-void CS_SimpleCurlForce(
-	uint3 dtid : SV_DispatchThreadID)
+void CS_SimpleCurlForce(uint3 dtid : SV_DispatchThreadID)
 {
 	if (dtid.x >= CID_GetCount()) { return; }
 	uint ID = CID_GetID(dtid.x);
@@ -63,7 +62,8 @@ void CS_SimpleCurlForce(
 	Particle p = Particles[ID];
 	float3 v = p.Position * freq;
 	float3 f = ComputeCurl(v.x, v.y, v.z, Time * speed);
-	Particles[ID].Force += f * 0.0025 * amplitude;
+	p.Force += f * 0.0025 * amplitude;
+	Particles[ID] = p;
 }
 
 technique11 SimpleCurl {
@@ -82,7 +82,7 @@ float3 ComputeCurl(float x, float y, float z, float w, float persistence)
 	
 	float3 p = float3(x, y, z);
 	
-	for (int i = 0; i < 3; i++)
+	for (uint i = 0; i < 3; i++)
 	{
 		float twoPowI = pow(2.0, float(i));
         float scale = 0.5 * twoPowI * pow(persistence, float(i));
@@ -100,8 +100,7 @@ float3 ComputeCurl(float x, float y, float z, float w, float persistence)
 }
 
 [numthreads(64, 1, 1)]
-void CS_CurlForce(
-	uint3 dtid : SV_DispatchThreadID)
+void CS_CurlForce(uint3 dtid : SV_DispatchThreadID)
 {
 	if (dtid.x >= CID_GetCount()) { return; }
 	uint ID = CID_GetID(dtid.x);
@@ -109,7 +108,8 @@ void CS_CurlForce(
 	Particle p = Particles[ID];
 	float3 v = p.Position * freq;
 	float3 f = ComputeCurl(v.x, v.y, v.z, Time * speed, persistence);
-	Particles[ID].Force += f * 0.01 * amplitude;
+	p.Force += f * 0.01 * amplitude;
+	Particles[ID] = p;
 }
 
 technique11 Curl {
@@ -121,8 +121,7 @@ technique11 Curl {
 ////////////////////////////////////////////////////////////////////////////////
 
 [numthreads(64, 1, 1)]
-void CS_SimplexForce(
-	uint3 dtid : SV_DispatchThreadID)
+void CS_SimplexForce(uint3 dtid : SV_DispatchThreadID)
 {
 	if (dtid.x >= CID_GetCount()) { return; }
 	uint ID = CID_GetID(dtid.x);
@@ -130,7 +129,8 @@ void CS_SimplexForce(
 	Particle p = Particles[ID];
 	float3 v = p.Position * freq;
 	float3 f = snoise3D(v, Time * speed);
-	Particles[ID].Force += f * 0.01 * amplitude;
+	p.Force += f * 0.01 * amplitude;
+	Particles[ID] = p;
 }
 
 technique11 Simplex {

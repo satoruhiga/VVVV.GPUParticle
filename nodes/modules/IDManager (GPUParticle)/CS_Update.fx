@@ -1,4 +1,4 @@
-#include "../common/CS_AgeLife.fxh"
+#include "../common/AgeLife.fxh"
 
 uint Capacity;
 float TimeInc;

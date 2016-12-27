@@ -1,5 +1,5 @@
-#include "../../common/CS_AgeLife.fxh"
-#include "../../common/CS_Random.fxh"
+#include "../../common/AgeLife.fxh"
+#include "../../common/Random.fxh"
 
 uint Capacity;
 

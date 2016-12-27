@@ -1,4 +1,4 @@
-#include "CS_interlockedAddFloat.fxh"
+#include "interlockedAddFloat.fxh"
 
 uint Count;
 

@@ -1,4 +1,4 @@
-#include "../CS_ParticleData.fxh"
+#include "../ParticleData.fxh"
 
 uint ThreadCount;
 

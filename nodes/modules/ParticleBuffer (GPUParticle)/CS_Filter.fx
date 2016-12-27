@@ -1,7 +1,5 @@
-#include "../common/CS_CID.fxh"
-#include "./CS_ParticleData.fxh"
-
-uint Count;
+#include "../common/CID.fxh"
+#include "./ParticleData.fxh"
 
 StructuredBuffer<Particle> Input;
 RWStructuredBuffer<Particle> Data : BACKBUFFER;

@@ -1,8 +1,8 @@
-<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta34.2.dtd" >
-   <PATCH nodename="C:\bin\vvvv_contributions\modules\GPUParticle\nodes\ParticleBuffer (GPUParticle)\Damping (GPUParticle)\Damping (GPUParticle).v4p" systemname="AddForce (GPUParticle)" filename="C:\WORK\vvvv\TestParticle\GPUParticle\AddForce (GPUParticle).v4p" scrollx="30" scrolly="0">
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta35.dtd" >
+   <PATCH nodename="C:\bin\vvvv_50beta35_x64\packs\GPUParticle\nodes\modules\ParticleBuffer (GPUParticle)\Damping (GPUParticle)\Damping (GPUParticle).v4p" systemname="AddForce (GPUParticle)" filename="C:\WORK\vvvv\TestParticle\GPUParticle\AddForce (GPUParticle).v4p" scrollx="30" scrolly="0">
    <BOUNDS type="Window" left="22200" top="11880" width="6045" height="5895">
    </BOUNDS>
-   <PACK Name="addonpack" Version="34.1.0">
+   <PACK Name="addonpack" Version="35.0.0">
    </PACK>
    <PACK Name="vvvv-ZeroMQ" Version="0.5.0">
    </PACK>
@@ -61,6 +61,8 @@
    </PIN>
    <BOUNDS type="Box" left="1905" top="1740">
    </BOUNDS>
+   <PIN pinname="Warp Size" slicecount="1" values="256">
+   </PIN>
    </NODE>
    <NODE nodename="IOBox (Node)" componentmode="InABox" id="27" systemname="IOBox (Node)">
    <BOUNDS type="Box" left="1905" top="720" width="300" height="240">
@@ -90,52 +92,26 @@
    <PIN pinname="Output Node" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="29" srcpinname="Output Node" dstnodeid="15" dstpinname="Input 1">
+   <LINK srcnodeid="29" srcpinname="Output Node" dstnodeid="15" dstpinname="Input 1" linkstyle="Bezier">
+   <LINKPOINT x="750" y="2280">
+   </LINKPOINT>
+   <LINKPOINT x="750" y="2280">
+   </LINKPOINT>
    </LINK>
    <NODE nodename="IOBox (Enumerations)" componentmode="InABox" id="30" systemname="IOBox (Enumerations)">
-   <BOUNDS type="Box" left="2850" top="2325" width="855" height="240">
+   <BOUNDS type="Box" left="2745" top="2415" width="855" height="240">
    </BOUNDS>
-   <BOUNDS type="Node" left="2850" top="2325" width="0" height="0">
+   <BOUNDS type="Node" left="2745" top="2415" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Input Enum" slicecount="1" visible="1" values="Damping">
+   <PIN pinname="Input Enum" slicecount="1" visible="1" values="Update">
    </PIN>
    </NODE>
-   <NODE systemname="CS_Damping (DX11.Effect)" filename="CS_Damping.fx" nodename="CS_Damping (DX11.Effect)" componentmode="Hidden" id="36">
-   <BOUNDS type="Node" left="1605" top="2805" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="CopyCounterBuffer" visible="1">
-   </PIN>
-   <PIN pinname="IDs" visible="1" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="damping" visible="1">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="26" srcpinname="Dispatcher" dstnodeid="36" dstpinname="Geometry" linkstyle="Bezier">
-   <LINKPOINT x="1935" y="2400">
-   </LINKPOINT>
-   <LINKPOINT x="1935" y="2400">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="36" srcpinname="Layer" dstnodeid="15" dstpinname="Input 2">
-   </LINK>
-   <LINK srcnodeid="16" srcpinname="Y Output Value" dstnodeid="36" dstpinname="Enabled" linkstyle="Bezier">
-   <LINKPOINT x="4575" y="1995">
-   </LINKPOINT>
-   <LINKPOINT x="3405" y="1995">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="30" srcpinname="Output Enum" dstnodeid="36" dstpinname="Technique">
-   </LINK>
-   <LINK srcnodeid="26" srcpinname="CopyCounterBuffer" dstnodeid="36" dstpinname="CopyCounterBuffer">
-   </LINK>
-   <LINK srcnodeid="26" srcpinname="IDs" dstnodeid="36" dstpinname="IDs">
-   </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="37" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="3135" top="720" width="795" height="240">
    </BOUNDS>
    <BOUNDS type="Node" left="3135" top="720" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.8">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -143,7 +119,51 @@
    </PIN>
    <PIN pinname="Descriptive Name" slicecount="1" values="Damping">
    </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
    </NODE>
-   <LINK srcnodeid="37" srcpinname="Y Output Value" dstnodeid="36" dstpinname="damping">
+   <NODE systemname="CS_Damping (DX11.Effect)" filename="CS_Damping.fx" nodename="CS_Damping (DX11.Effect)" componentmode="Hidden" id="40">
+   <BOUNDS type="Node" left="1605" top="2805" width="100" height="100">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="26" srcpinname="Dispatcher" dstnodeid="40" dstpinname="Geometry" linkstyle="Bezier">
+   <LINKPOINT x="1935" y="2400">
+   </LINKPOINT>
+   <LINKPOINT x="1935" y="2400">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="40" srcpinname="Layer" dstnodeid="15" dstpinname="Input 2">
+   </LINK>
+   <LINK srcnodeid="16" srcpinname="Y Output Value" dstnodeid="40" dstpinname="Enabled" linkstyle="Bezier">
+   <LINKPOINT x="4575" y="1995">
+   </LINKPOINT>
+   <LINKPOINT x="3405" y="1995">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="30" srcpinname="Output Enum" dstnodeid="40" dstpinname="Technique" linkstyle="Bezier">
+   <LINKPOINT x="2760" y="2715">
+   </LINKPOINT>
+   <LINKPOINT x="2760" y="2715">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="26" srcpinname="CopyCounterBuffer" dstnodeid="40" dstpinname="CopyCounterBuffer" linkstyle="Bezier">
+   <LINKPOINT x="2460" y="2400">
+   </LINKPOINT>
+   <LINKPOINT x="2595" y="2400">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="26" srcpinname="IDs" dstnodeid="40" dstpinname="IDs" linkstyle="Bezier">
+   <LINKPOINT x="2190" y="2400">
+   </LINKPOINT>
+   <LINKPOINT x="2430" y="2400">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="37" srcpinname="Y Output Value" dstnodeid="40" dstpinname="damping">
+   </LINK>
+   <LINK srcnodeid="37" srcpinname="Y Output Value" dstnodeid="40" dstpinname="Damping" linkstyle="Bezier">
+   <LINKPOINT x="3135" y="1875">
+   </LINKPOINT>
+   <LINKPOINT x="2280" y="1875">
+   </LINKPOINT>
    </LINK>
    </PATCH>

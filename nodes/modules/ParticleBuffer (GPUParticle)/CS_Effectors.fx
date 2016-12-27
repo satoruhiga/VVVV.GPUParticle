@@ -1,5 +1,5 @@
-#include "../common/CS_CID.fxh"
-#include "./CS_ParticleData.fxh"
+#include "../common/CID.fxh"
+#include "./ParticleData.fxh"
 
 StructuredBuffer<float> Data1f;
 StructuredBuffer<float3> Data3f;

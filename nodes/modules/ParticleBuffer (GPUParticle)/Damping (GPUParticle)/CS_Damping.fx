@@ -1,26 +1,26 @@
-#include "../../common/CS_CID.fxh"
-#include "../CS_ParticleData.fxh"
+#include "../../common/CID.fxh"
+#include "../ParticleData.fxh"
 
-float damping = 1;
+float Damping = 1;
 
 RWStructuredBuffer<Particle> Particles : BACKBUFFER;
 
 ////////////////////////////////////////////////////////////////////////////////
 
-[numthreads(64, 1, 1)]
-void CS_Damping(
-	uint3 dtid : SV_DispatchThreadID)
+[numthreads(256, 1, 1)]
+void CS(uint3 dtid : SV_DispatchThreadID)
 {
 	if (dtid.x >= CID_GetCount()) { return; }
 	uint ID = CID_GetID(dtid.x);
 	
-	Particles[ID].Force *= damping;
-	Particles[ID].Velocity *= damping;
+	Particle p = Particles[ID];
+	p.Velocity *= Damping;
+	Particles[ID] = p;
 }
 
-technique11 Damping {
+technique11 Update {
 	pass P0 {
-		SetComputeShader( CompileShader( cs_5_0, CS_Damping() ) );
+		SetComputeShader( CompileShader( cs_5_0, CS() ) );
 	}
 }
 

@@ -1,61 +1,17 @@
-#include "../common/CS_AgeLife.fxh"
+#include "../common/AgeLife.fxh"
 
 uint Capaciaty;
 
 StructuredBuffer<AgeLife> Input;
-RWStructuredBuffer<uint> Output : BACKBUFFER;
+
+RWStructuredBuffer<uint> AliveBuffer : BACKBUFFER0;
+RWStructuredBuffer<uint> NewBuffer : BACKBUFFER1;
+RWStructuredBuffer<AgeLife> AgeLifeBuffer : BACKBUFFER2;
 
 ////////////////////////////////////////////////////////////////////////////////
 
 [numthreads(64, 1, 1)]
-void CS_UpdatActive(
-	uint3 dtid : SV_DispatchThreadID)
-{
-	if (dtid.x >= Capaciaty) return;
-	
-	AgeLife p = Input[dtid.x];
-
-	if (IsAlive(p))
-	{
-		uint cnt = Output.IncrementCounter();
-		Output[cnt] = dtid.x;
-	}
-}
-
-technique11 UpdateActive {
-	pass P0 {
-		SetComputeShader( CompileShader( cs_5_0, CS_UpdatActive() ) );
-	}
-}
-
-////////////////////////////////////////////////////////////////////////////////
-
-[numthreads(64, 1, 1)]
-void CS_UpdateFree(
-	uint3 dtid : SV_DispatchThreadID)
-{
-	if (dtid.x >= Capaciaty) return;
-	
-	AgeLife p = Input[dtid.x];
-
-	if (!IsAlive(p))
-	{
-		uint cnt = Output.IncrementCounter();
-		Output[cnt] = dtid.x;
-	}
-}
-
-technique11 UpdateFree {
-	pass P0 {
-		SetComputeShader( CompileShader( cs_5_0, CS_UpdateFree() ) );
-	}
-}
-
-
-////////////////////////////////////////////////////////////////////////////////
-
-[numthreads(64, 1, 1)]
-void CS_UpdateNew(
+void CS(
 	uint3 dtid : SV_DispatchThreadID)
 {
 	if (dtid.x >= Capaciaty) return;
@@ -64,13 +20,19 @@ void CS_UpdateNew(
 
 	if (p.Age == 0)
 	{
-		uint cnt = Output.IncrementCounter();
-		Output[cnt] = dtid.x;
+		uint cnt = NewBuffer.IncrementCounter();
+		NewBuffer[cnt] = dtid.x;
+	}
+	else if (IsAlive(p))
+	{
+		uint cnt = AliveBuffer.IncrementCounter();
+		AliveBuffer[cnt] = dtid.x;
+		AgeLifeBuffer[cnt] = p;
 	}
 }
 
-technique11 UpdateNew {
+technique11 Update {
 	pass P0 {
-		SetComputeShader( CompileShader( cs_5_0, CS_UpdateNew() ) );
+		SetComputeShader( CompileShader( cs_5_0, CS() ) );
 	}
 }

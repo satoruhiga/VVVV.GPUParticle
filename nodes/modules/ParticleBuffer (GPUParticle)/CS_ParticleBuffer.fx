@@ -1,5 +1,5 @@
-#include "../common/CS_CID.fxh"
-#include "./CS_ParticleData.fxh"
+#include "../common/CID.fxh"
+#include "./ParticleData.fxh"
 
 uint Capacity;
 float TimeInc = 1.0 / 60.0;

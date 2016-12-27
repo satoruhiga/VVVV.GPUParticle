@@ -1,5 +1,5 @@
-<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta34.2.dtd" >
-   <PATCH nodename="C:\bin\vvvv_contributions\modules\GPUParticle\nodes\ParticleBuffer (GPUParticle)\AddNoiseForce (GPUParticle)\AddNoiseForce (GPUParticle).v4p" systemname="AddForce (GPUParticle)" filename="C:\WORK\vvvv\TestParticle\GPUParticle\AddForce (GPUParticle).v4p">
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta35.dtd" >
+   <PATCH nodename="C:\bin\vvvv_50beta35_x64\packs\GPUParticle\nodes\modules\ParticleBuffer (GPUParticle)\AddNoiseForce (GPUParticle)\AddNoiseForce (GPUParticle).v4p" systemname="AddForce (GPUParticle)" filename="C:\WORK\vvvv\TestParticle\GPUParticle\AddForce (GPUParticle).v4p">
    <NODE id="4" systemname="IOBox (Node)" componentmode="InABox" nodename="IOBox (Node)">
    <PIN pinname="Descriptive Name" slicecount="1" values="Layer">
    </PIN>
@@ -12,14 +12,14 @@
    </NODE>
    <BOUNDS type="Window" left="24225" top="12465" width="14100" height="7005">
    </BOUNDS>
-   <PACK Name="addonpack" Version="34.1.0">
+   <PACK Name="addonpack" Version="35.0.0">
    </PACK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="8" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="3375" top="735" width="795" height="240">
    </BOUNDS>
    <BOUNDS type="Node" left="3375" top="735" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.4">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -37,7 +37,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="4410" top="735" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="8">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="10">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -67,7 +67,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="6780" top="735" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.75">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.96">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -154,7 +154,7 @@
    <PIN pinname="Descriptive Name" slicecount="1" values="Enabled">
    </PIN>
    </NODE>
-   <NODE systemname="CID (GPUParticle Counter Indirect)" filename="..\..\CID (GPUParticle Counter Indirect)\CID (GPUParticle Counter Indirect).v4p" nodename="CID (GPUParticle Counter Indirect)" componentmode="Hidden" id="28">
+   <NODE systemname="CID (GPUParticle Counter Indirect)" filename="%VVVV%\packs\GPUParticle\nodes\modules\IDManager (GPUParticle)\CID (GPUParticle Counter Indirect)\CID (GPUParticle Counter Indirect).v4p" nodename="CID (GPUParticle Counter Indirect)" componentmode="Hidden" id="28">
    <BOUNDS type="Node" left="2235" top="1710" width="100" height="100">
    </BOUNDS>
    <PIN pinname="IDs" visible="1" slicecount="1" values="||">
@@ -208,74 +208,12 @@
    </LINK>
    <LINK srcnodeid="33" srcpinname="Output 1" dstnodeid="32" dstpinname="Input 1" linkstyle="PolyLine">
    </LINK>
-   <NODE systemname="CS_AddNoiseForce (DX11.Effect)" filename="CS_AddNoiseForce.fx" nodename="CS_AddNoiseForce (DX11.Effect)" componentmode="Hidden" id="35">
-   <BOUNDS type="Node" left="3150" top="3555" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="speed" visible="1">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="10" srcpinname="Output Enum" dstnodeid="35" dstpinname="Technique" linkstyle="Bezier">
-   <LINKPOINT x="8300" y="2135">
-   </LINKPOINT>
-   <LINKPOINT x="4840" y="2410">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="13" srcpinname="Y Output Value" dstnodeid="35" dstpinname="persistence" linkstyle="Bezier">
-   <LINKPOINT x="6730" y="2273">
-   </LINKPOINT>
-   <LINKPOINT x="4055" y="2273">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="9" srcpinname="Y Output Value" dstnodeid="35" dstpinname="amplitude" linkstyle="Bezier">
-   <LINKPOINT x="4425" y="2288">
-   </LINKPOINT>
-   <LINKPOINT x="4290" y="2288">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="8" srcpinname="Y Output Value" dstnodeid="35" dstpinname="freq" linkstyle="Bezier">
-   <LINKPOINT x="3405" y="2288">
-   </LINKPOINT>
-   <LINKPOINT x="4110" y="2288">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="35" srcpinname="Layer" dstnodeid="18" dstpinname="Input 2" linkstyle="Bezier">
-   <LINKPOINT x="3150" y="4185">
-   </LINKPOINT>
-   <LINKPOINT x="1275" y="4185">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="21" srcpinname="Y Output Value" dstnodeid="35" dstpinname="Enabled">
-   </LINK>
-   <LINK srcnodeid="28" srcpinname="Dispatcher" dstnodeid="35" dstpinname="Geometry" linkstyle="Bezier">
-   <LINKPOINT x="2295" y="2760">
-   </LINKPOINT>
-   <LINKPOINT x="3465" y="2760">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="28" srcpinname="IDs" dstnodeid="35" dstpinname="IDs" linkstyle="Bezier">
-   <LINKPOINT x="2550" y="2753">
-   </LINKPOINT>
-   <LINKPOINT x="4395" y="2753">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="28" srcpinname="CopyCounterBuffer" dstnodeid="35" dstpinname="CopyCounterBuffer" linkstyle="Bezier">
-   <LINKPOINT x="2820" y="2753">
-   </LINKPOINT>
-   <LINKPOINT x="4560" y="2753">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="33" srcpinname="Output 1" dstnodeid="35" dstpinname="Time" linkstyle="Bezier">
-   <LINKPOINT x="9215" y="2550">
-   </LINKPOINT>
-   <LINKPOINT x="5590" y="2550">
-   </LINKPOINT>
-   </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="36" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="5550" top="735" width="795" height="240">
    </BOUNDS>
    <BOUNDS type="Node" left="5550" top="735" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.3">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -284,6 +222,66 @@
    <PIN pinname="Descriptive Name" slicecount="1" values="Speed">
    </PIN>
    </NODE>
-   <LINK srcnodeid="36" srcpinname="Y Output Value" dstnodeid="35" dstpinname="speed">
+   <NODE systemname="CS_AddNoiseForce (DX11.Effect)" filename="%VVVV%\packs\GPUParticle\nodes\modules\ParticleBuffer (GPUParticle)\AddNoiseForce (GPUParticle)\CS_AddNoiseForce.fx" nodename="CS_AddNoiseForce (DX11.Effect)" componentmode="Hidden" id="37">
+   <BOUNDS type="Node" left="3150" top="3555" width="100" height="100">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="10" srcpinname="Output Enum" dstnodeid="37" dstpinname="Technique" linkstyle="Bezier">
+   <LINKPOINT x="8300" y="2135">
+   </LINKPOINT>
+   <LINKPOINT x="4840" y="2410">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="13" srcpinname="Y Output Value" dstnodeid="37" dstpinname="persistence" linkstyle="Bezier">
+   <LINKPOINT x="6730" y="2273">
+   </LINKPOINT>
+   <LINKPOINT x="4055" y="2273">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="9" srcpinname="Y Output Value" dstnodeid="37" dstpinname="amplitude" linkstyle="Bezier">
+   <LINKPOINT x="4425" y="2288">
+   </LINKPOINT>
+   <LINKPOINT x="4290" y="2288">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="8" srcpinname="Y Output Value" dstnodeid="37" dstpinname="freq" linkstyle="Bezier">
+   <LINKPOINT x="3405" y="2288">
+   </LINKPOINT>
+   <LINKPOINT x="4110" y="2288">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="37" srcpinname="Layer" dstnodeid="18" dstpinname="Input 2" linkstyle="Bezier">
+   <LINKPOINT x="3150" y="4185">
+   </LINKPOINT>
+   <LINKPOINT x="1275" y="4185">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="21" srcpinname="Y Output Value" dstnodeid="37" dstpinname="Enabled">
+   </LINK>
+   <LINK srcnodeid="28" srcpinname="Dispatcher" dstnodeid="37" dstpinname="Geometry" linkstyle="Bezier">
+   <LINKPOINT x="2295" y="2760">
+   </LINKPOINT>
+   <LINKPOINT x="3465" y="2760">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="28" srcpinname="IDs" dstnodeid="37" dstpinname="IDs" linkstyle="Bezier">
+   <LINKPOINT x="2550" y="2753">
+   </LINKPOINT>
+   <LINKPOINT x="4395" y="2753">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="28" srcpinname="CopyCounterBuffer" dstnodeid="37" dstpinname="CopyCounterBuffer" linkstyle="Bezier">
+   <LINKPOINT x="2820" y="2753">
+   </LINKPOINT>
+   <LINKPOINT x="4560" y="2753">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="33" srcpinname="Output 1" dstnodeid="37" dstpinname="Time" linkstyle="Bezier">
+   <LINKPOINT x="9215" y="2550">
+   </LINKPOINT>
+   <LINKPOINT x="5590" y="2550">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="36" srcpinname="Y Output Value" dstnodeid="37" dstpinname="speed">
    </LINK>
    </PATCH>
