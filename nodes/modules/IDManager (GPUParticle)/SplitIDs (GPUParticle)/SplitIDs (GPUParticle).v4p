@@ -1,0 +1,103 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta34.2.dtd" >
+   <PATCH nodename="C:\bin\vvvv_45beta34.2_x64\packs\GPUParticle\nodes\modules\IDManager (GPUParticle)\SplitIDs (GPUParticle)\SplitIDs (GPUParticle).v4p" systemname="SplitBuffers (GPUParticle)" filename="C:\bin\vvvv_45beta34.2_x64\packs\GPUParticle\nodes\modules\IDManager (GPUParticle)\SplitBuffers (GPUParticle)\SplitBuffers (GPUParticle).v4p">
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="0" systemname="IOBox (Node)">
+   <BOUNDS type="Box" left="660" top="2070" width="300" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="660" top="2070" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Descriptive Name" slicecount="1" values="ActiveIDs">
+   </PIN>
+   <PIN pinname="Input Node" slicecount="1" visible="1" values="||">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="1" systemname="IOBox (Node)">
+   <BOUNDS type="Box" left="1935" top="2070" width="300" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="1935" top="2070" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Descriptive Name" slicecount="1" values="NewIDs">
+   </PIN>
+   <PIN pinname="Input Node" slicecount="1" visible="1" values="||">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="2" systemname="IOBox (Node)">
+   <BOUNDS type="Box" left="3165" top="2070" width="300" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="3165" top="2070" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Descriptive Name" slicecount="1" values="AgeLife">
+   </PIN>
+   <PIN pinname="Pin Visibility" slicecount="1" values="True">
+   </PIN>
+   <PIN pinname="Input Node" visible="1" slicecount="1" values="||">
+   </PIN>
+   </NODE>
+   <NODE systemname="GetSlice (Node)" nodename="GetSlice (Node)" componentmode="Hidden" id="3">
+   <BOUNDS type="Node" left="1935" top="1500" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input Node" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Output Node" visible="1">
+   </PIN>
+   <PIN pinname="Index" slicecount="1" values="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="GetSlice (Node)" nodename="GetSlice (Node)" componentmode="Hidden" id="4">
+   <BOUNDS type="Node" left="3165" top="1500" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input Node" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Output Node" visible="1">
+   </PIN>
+   <PIN pinname="Index" slicecount="1" values="2">
+   </PIN>
+   </NODE>
+   <NODE systemname="GetSlice (Node)" nodename="GetSlice (Node)" componentmode="Hidden" id="5">
+   <BOUNDS type="Node" left="660" top="1500" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input Node" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Output Node" visible="1">
+   </PIN>
+   <PIN pinname="Index" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <NODE id="6" systemname="IOBox (Node)" componentmode="InABox" nodename="IOBox (Node)">
+   <PIN pinname="Descriptive Name" slicecount="1" values="Buffers">
+   </PIN>
+   <BOUNDS type="Box" left="1905" top="485" width="750" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="1905" top="485" width="750" height="240">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="6" srcpinname="Output Node" dstnodeid="5" dstpinname="Input Node" linkstyle="Bezier">
+   <LINKPOINT x="1905" y="1095">
+   </LINKPOINT>
+   <LINKPOINT x="720" y="1095">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="5" srcpinname="Output Node" dstnodeid="0" dstpinname="Input Node">
+   </LINK>
+   <LINK srcnodeid="3" srcpinname="Output Node" dstnodeid="1" dstpinname="Input Node">
+   </LINK>
+   <LINK srcnodeid="6" srcpinname="Output Node" dstnodeid="3" dstpinname="Input Node" linkstyle="Bezier">
+   <LINKPOINT x="1935" y="1103">
+   </LINKPOINT>
+   <LINKPOINT x="1950" y="1103">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="4" srcpinname="Output Node" dstnodeid="2" dstpinname="Input Node">
+   </LINK>
+   <LINK srcnodeid="6" srcpinname="Output Node" dstnodeid="4" dstpinname="Input Node" linkstyle="Bezier">
+   <LINKPOINT x="1965" y="1095">
+   </LINKPOINT>
+   <LINKPOINT x="3165" y="1095">
+   </LINKPOINT>
+   </LINK>
+   <BOUNDS type="Window" left="24345" top="13485" width="4755" height="3660">
+   </BOUNDS>
+   <PACK Name="vvvv-ZeroMQ" Version="0.5.0">
+   </PACK>
+   <PACK Name="addonpack" Version="34.1.0">
+   </PACK>
+   </PATCH>

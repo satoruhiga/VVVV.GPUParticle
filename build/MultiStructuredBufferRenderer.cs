@@ -30,9 +30,9 @@ namespace VVVV.DX11.Nodes
 
 		[Input("Semantic", Order = 2, DefaultString = "BACKBUFFER")]
 		protected IDiffSpread<string> FSemantic;
-		[Input("UAV Postfix", Order = 3, DefaultString = "", BinVisibility = PinVisibility.OnlyInspector)]
+		[Input("UAV Postfix", Order = 3, DefaultString = "", Visibility = PinVisibility.OnlyInspector)]
 		protected IDiffSpread<string> FUAVPostfix;
-		[Input("SRV Postfix", Order = 4, DefaultString = "_SRV", BinVisibility = PinVisibility.OnlyInspector)]
+		[Input("SRV Postfix", Order = 4, DefaultString = "_SRV", Visibility = PinVisibility.OnlyInspector)]
 		protected IDiffSpread<string> FSRVPostfix;
 
 		[Input("Element Count", Order = 5, DefaultValue = 512)]
@@ -75,9 +75,7 @@ namespace VVVV.DX11.Nodes
 
 		private bool reset = false;
 
-
 		public event DX11QueryableDelegate BeginQuery;
-
 		public event DX11QueryableDelegate EndQuery;
 
 		private DX11RenderSettings settings = new DX11RenderSettings();
@@ -85,7 +83,6 @@ namespace VVVV.DX11.Nodes
 		[ImportingConstructor()]
 		public DX11MultiStructuredBufferRendererNode(IPluginHost FHost)
 		{
-
 		}
 
 		public void Evaluate(int SpreadMax)
@@ -105,6 +102,7 @@ namespace VVVV.DX11.Nodes
 					reset = true;
 				}
 			}
+
 			if (this.FOutQueryable[0] == null) { this.FOutQueryable[0] = this; }
 
 			for (int i = 0; i < FOutBuffers.SliceCount; i++)
@@ -118,6 +116,7 @@ namespace VVVV.DX11.Nodes
 				sizes.Clear();
 				strides.Clear();
 				semantics.Clear();
+
 				for (int i = 0; i < FSemantic.SliceCount; i++)
 				{
 					sizes.Add(FInSize[i]);
@@ -149,10 +148,7 @@ namespace VVVV.DX11.Nodes
 
 			if (this.FInEnabled[0])
 			{
-				if (this.BeginQuery != null)
-				{
-					this.BeginQuery(context);
-				}
+				this.BeginQuery?.Invoke(context);
 
 				context.CurrentDeviceContext.OutputMerger.SetTargets(new RenderTargetView[0]);
 
@@ -176,15 +172,16 @@ namespace VVVV.DX11.Nodes
 						int[] resetval = { FInResetCounterValue[i] };
 						var uavarray = new UnorderedAccessView[1] { FOutBuffers[i][context].UAV };
 						context.CurrentDeviceContext.ComputeShader.SetUnorderedAccessViews(uavarray, 0, 1, resetval);
-					}
+					}.
 					else
 					{
 						settings.ResetCounter = false;
 					}
 				}
+
 				FInLayer[0][context].Render(FInLayer.PluginIO, context, settings);
 
-				EndQuery?.Invoke(context);
+				this.EndQuery?.Invoke(context);
 			}
 		}
 
@@ -196,6 +193,7 @@ namespace VVVV.DX11.Nodes
 			{
 				semres.Dispose();
 			}
+
 			if (reset)
 			{
 				rsemantics.Clear();
@@ -216,7 +214,6 @@ namespace VVVV.DX11.Nodes
 						StructuredBufferRenderSemantic srvbs = new StructuredBufferRenderSemantic(FSemantic[i] + FSRVPostfix[i], false);
 						srvbs.Data = this.FOutBuffers[i][context];
 						rsemantics.Add(srvbs);
-
 					}
 				}
 			}

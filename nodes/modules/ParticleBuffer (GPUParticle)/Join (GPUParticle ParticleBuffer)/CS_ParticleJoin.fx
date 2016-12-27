@@ -27,7 +27,7 @@ void CS_Join(
 	Position.GetDimensions(size, dummy);
 	size = min(size, Count);
 	if (size > 0)
-		p.Position = Position[idx % size] + float3(0, 0, 0);
+		p.Position = Position[idx % size];
 	else
 		p.Position = float3(0, 0, 0);
 	
@@ -50,7 +50,7 @@ void CS_Join(
 	if (size > 0)
 		p.Size = Size[idx % size];
 	else
-		p.Size = 0.1;
+		p.Size = 1;
 	
 	Mass.GetDimensions(size, dummy);
 	size = min(size, Count);
@@ -59,11 +59,11 @@ void CS_Join(
 	else
 		p.Mass = 1;
 	
-	// FIXME: super adhoc fix...
-	if (length(p.Position) == 0.0)
-	{
-		p.Position = float3(999999999, 999999999, 999999999);
-	}
+//	// FIXME: super adhoc fix...
+//	if (length(p.Position) == 0.0)
+//	{
+//		p.Position = float3(999999999, 999999999, 999999999);
+//	}
 
 	Output[dtid.x] = p;
 }

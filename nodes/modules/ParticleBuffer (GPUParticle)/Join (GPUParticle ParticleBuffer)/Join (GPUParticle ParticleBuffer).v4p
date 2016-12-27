@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta34.2.dtd" >
-   <PATCH nodename="C:\bin\vvvv_contributions\modules\GPUParticle\nodes\ParticleBuffer (GPUParticle)\Join (GPUParticle ParticleBuffer)\Join (GPUParticle ParticleBuffer).v4p" systemname="ParticleJoin" filename="C:\WORK\vvvv\TestParticle\GPUParticle\ParticleJoin.v4p" locked="0">
+   <PATCH nodename="C:\bin\vvvv_45beta34.2_x64\packs\GPUParticle\nodes\modules\ParticleBuffer (GPUParticle)\Join (GPUParticle ParticleBuffer)\Join (GPUParticle ParticleBuffer).v4p" systemname="ParticleJoin" filename="C:\WORK\vvvv\TestParticle\GPUParticle\ParticleJoin.v4p" locked="0">
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="1" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="645" top="645" width="285" height="240">
    </BOUNDS>
@@ -80,7 +80,7 @@
    <LINKPOINT x="675" y="1020">
    </LINKPOINT>
    </LINK>
-   <BOUNDS type="Window" left="21120" top="9330" width="9720" height="4950">
+   <BOUNDS type="Window" left="38055" top="9930" width="9720" height="4950">
    </BOUNDS>
    <PACK Name="addonpack" Version="34.1.0">
    </PACK>
@@ -138,7 +138,7 @@
    <PIN pinname="Output" visible="1">
    </PIN>
    </NODE>
-   <NODE systemname="CS_ParticleJoin (DX11.Effect)" filename="CS_ParticleJoin.fx" nodename="CS_ParticleJoin (DX11.Effect)" componentmode="Hidden" id="15">
+   <NODE systemname="CS_ParticleJoin (DX11.Effect)" filename="%VVVV%\packs\GPUParticle\nodes\modules\ParticleBuffer (GPUParticle)\Join (GPUParticle ParticleBuffer)\CS_ParticleJoin.fx" nodename="CS_ParticleJoin (DX11.Effect)" componentmode="Hidden" id="15">
    <BOUNDS type="Node" left="3585" top="2475" width="1965" height="270">
    </BOUNDS>
    </NODE>
