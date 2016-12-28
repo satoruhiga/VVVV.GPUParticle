@@ -108,20 +108,6 @@
    <PIN pinname="Output Node" visible="1">
    </PIN>
    </NODE>
-   <NODE systemname="CID (GPUParticle Counter Indirect)" filename="%VVVV%\packs\GPUParticle\nodes\modules\IDManager (GPUParticle)\CID (GPUParticle Counter Indirect)\CID (GPUParticle Counter Indirect).v4p" nodename="CID (GPUParticle Counter Indirect)" componentmode="Hidden" id="187" hiddenwhenlocked="1">
-   <BOUNDS type="Node" left="3435" top="1935" width="100" height="100">
-   </BOUNDS>
-   <BOUNDS type="Box" left="3435" top="1935" width="4015" height="3610">
-   </BOUNDS>
-   <BOUNDS type="Window" left="12675" top="4335" width="5475" height="3765">
-   </BOUNDS>
-   <PIN pinname="IDs" visible="1" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Dispatcher" visible="1">
-   </PIN>
-   <PIN pinname="CopyCounterBuffer" visible="1">
-   </PIN>
-   </NODE>
    <NODE systemname="SplitIDs (GPUParticle)" filename="%VVVV%\packs\GPUParticle\nodes\modules\IDManager (GPUParticle)\SplitIDs (GPUParticle)\SplitIDs (GPUParticle).v4p" nodename="SplitIDs (GPUParticle)" componentmode="Hidden" id="204" hiddenwhenlocked="1">
    <BOUNDS type="Node" left="3435" top="1440" width="100" height="100">
    </BOUNDS>
@@ -139,8 +125,6 @@
    </LINKPOINT>
    <LINKPOINT x="3465" y="1170">
    </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="204" srcpinname="ActiveIDs" dstnodeid="187" dstpinname="IDs" hiddenwhenlocked="1">
    </LINK>
    <LINK srcnodeid="190" srcpinname="Output Node" dstnodeid="181" dstpinname="Layer 2" linkstyle="Bezier" hiddenwhenlocked="1">
    <LINKPOINT x="5350" y="3590">
@@ -176,24 +160,34 @@
    <LINKPOINT x="3495" y="2105">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="187" srcpinname="CopyCounterBuffer" dstnodeid="206" dstpinname="CopyCounterBuffer" hiddenwhenlocked="1" linkstyle="Bezier">
+   <LINK srcnodeid="206" srcpinname="Layer" dstnodeid="181" dstpinname="Layer 1">
+   </LINK>
+   <NODE systemname="CID (GPUParticle Counter Indirect)" filename="%VVVV%\packs\GPUParticle\nodes\modules\IDManager (GPUParticle)\CID (GPUParticle Counter Indirect)\CID (GPUParticle Counter Indirect).v4p" nodename="CID (GPUParticle Counter Indirect)" componentmode="Hidden" id="207" hiddenwhenlocked="1">
+   <BOUNDS type="Node" left="3435" top="1935" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="3435" top="1935" width="4015" height="3610">
+   </BOUNDS>
+   <BOUNDS type="Window" left="12675" top="4335" width="5475" height="3765">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="204" srcpinname="ActiveIDs" dstnodeid="207" dstpinname="IDs" hiddenwhenlocked="1">
+   </LINK>
+   <LINK srcnodeid="207" srcpinname="CopyCounterBuffer" dstnodeid="206" dstpinname="CopyCounterBuffer" hiddenwhenlocked="1" linkstyle="Bezier">
    <LINKPOINT x="3975" y="2933">
    </LINKPOINT>
    <LINKPOINT x="3840" y="2933">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="187" srcpinname="Dispatcher" dstnodeid="206" dstpinname="Geometry" hiddenwhenlocked="1" linkstyle="Bezier">
+   <LINK srcnodeid="207" srcpinname="Dispatcher" dstnodeid="206" dstpinname="Geometry" hiddenwhenlocked="1" linkstyle="Bezier">
    <LINKPOINT x="3450" y="2925">
    </LINKPOINT>
    <LINKPOINT x="3030" y="2925">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="187" srcpinname="IDs" dstnodeid="206" dstpinname="IDs" hiddenwhenlocked="1" linkstyle="Bezier">
+   <LINK srcnodeid="207" srcpinname="IDs" dstnodeid="206" dstpinname="IDs" hiddenwhenlocked="1" linkstyle="Bezier">
    <LINKPOINT x="3705" y="2925">
    </LINKPOINT>
    <LINKPOINT x="3675" y="2925">
    </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="206" srcpinname="Layer" dstnodeid="181" dstpinname="Layer 1">
    </LINK>
    </PATCH>

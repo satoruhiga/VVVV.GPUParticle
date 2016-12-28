@@ -1,0 +1,145 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta35.dtd" >
+   <PATCH nodename="C:\bin\vvvv_50beta35_x64\packs\GPUParticle\nodes\modules\Buffer\RandomBuffer (3D GPUParticle).v4p" systemname="RandomBuffer (GPUParticle)" filename="C:\bin\vvvv_50beta35_x64\packs\GPUParticle\nodes\modules\Buffer\RandomBuffer (GPUParticle).v4p">
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="0" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="480" top="675" width="405" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="480" top="675" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Integer">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Count">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="1" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="2040" top="675" width="405" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="2040" top="675" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Seed">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="2" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="3150" top="675" width="795" height="720">
+   </BOUNDS>
+   <BOUNDS type="Node" left="3150" top="675" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="3" visible="1" values="1,1.16,1">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Vector Size" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="Rows" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="SizeXYZ">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="3" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="4365" top="675" width="795" height="720">
+   </BOUNDS>
+   <BOUNDS type="Node" left="4365" top="675" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="3" visible="1" values="0,0,0">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Vector Size" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="Rows" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="OffsetXYZ">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="3" values="0,0,0">
+   </PIN>
+   </NODE>
+   <NODE systemname="Dispatch1D (Compute Dispatch)" filename="%VVVV%\packs\InstanceNoodles\nodes\modules\Compute\Dispatch1D (Compute Dispatch).v4p" nodename="Dispatch1D (Compute Dispatch)" componentmode="Hidden" id="4">
+   <BOUNDS type="Node" left="1530" top="2160" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Count" visible="1">
+   </PIN>
+   <PIN pinname="Geometry Out" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="CS_RandomBuffer3f (DX11.Effect)" filename="%VVVV%\packs\GPUParticle\nodes\modules\Buffer\CS_RandomBuffer3f.fx" nodename="CS_RandomBuffer3f (DX11.Effect)" componentmode="Hidden" id="5">
+   <BOUNDS type="Node" left="1185" top="2535" width="100" height="100">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="Renderer (DX11 Buffer Advanced)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Renderer (DX11 Buffer Advanced)" componentmode="Hidden" id="6">
+   <BOUNDS type="Node" left="870" top="2985" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Stride" slicecount="1" values="12">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="0" srcpinname="Y Output Value" dstnodeid="4" dstpinname="Count" linkstyle="Bezier">
+   <LINKPOINT x="540" y="1530">
+   </LINKPOINT>
+   <LINKPOINT x="1530" y="1530">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="5" srcpinname="Layer" dstnodeid="6" dstpinname="Layer">
+   </LINK>
+   <LINK srcnodeid="0" srcpinname="Y Output Value" dstnodeid="6" dstpinname="Element Count" linkstyle="Bezier">
+   <LINKPOINT x="525" y="1943">
+   </LINKPOINT>
+   <LINKPOINT x="1365" y="1943">
+   </LINKPOINT>
+   </LINK>
+   <NODE id="7" systemname="IOBox (Node)" componentmode="InABox" nodename="IOBox (Node)">
+   <PIN pinname="Descriptive Name" slicecount="1" values="Buffers">
+   </PIN>
+   <BOUNDS type="Box" left="870" top="3585" width="750" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="870" top="3585" width="750" height="240">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="6" srcpinname="Buffers" dstnodeid="7" dstpinname="Input Node">
+   </LINK>
+   <LINK srcnodeid="4" srcpinname="Geometry Out" dstnodeid="5" dstpinname="Geometry">
+   </LINK>
+   <LINK srcnodeid="1" srcpinname="Y Output Value" dstnodeid="5" dstpinname="Seed" linkstyle="Bezier">
+   <LINKPOINT x="2055" y="1725">
+   </LINKPOINT>
+   <LINKPOINT x="1935" y="1725">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="0" srcpinname="Y Output Value" dstnodeid="5" dstpinname="Count" linkstyle="Bezier">
+   <LINKPOINT x="540" y="1718">
+   </LINKPOINT>
+   <LINKPOINT x="2070" y="1718">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="2" srcpinname="Y Output Value" dstnodeid="5" dstpinname="SizeXYZ" linkstyle="Bezier">
+   <LINKPOINT x="3135" y="1958">
+   </LINKPOINT>
+   <LINKPOINT x="2310" y="1958">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="3" srcpinname="Y Output Value" dstnodeid="5" dstpinname="OffsetXYZ" linkstyle="Bezier">
+   <LINKPOINT x="4365" y="1950">
+   </LINKPOINT>
+   <LINKPOINT x="2490" y="1950">
+   </LINKPOINT>
+   </LINK>
+   <BOUNDS type="Window" left="27840" top="15930" width="6165" height="5175">
+   </BOUNDS>
+   <PACK Name="addonpack" Version="35.0.0">
+   </PACK>
+   </PATCH>

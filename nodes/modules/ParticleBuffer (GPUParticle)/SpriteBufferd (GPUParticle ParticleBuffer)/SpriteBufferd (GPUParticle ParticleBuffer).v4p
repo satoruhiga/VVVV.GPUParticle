@@ -59,6 +59,8 @@
    </BOUNDS>
    <BOUNDS type="Node" left="6420" top="690" width="750" height="240">
    </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" values="0.1">
+   </PIN>
    </NODE>
    <NODE id="7" systemname="IOBox (Color)" componentmode="InABox" nodename="IOBox (Color)">
    <PIN pinname="Descriptive Name" slicecount="1" values="|Default Color|">

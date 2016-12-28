@@ -1,0 +1,139 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta35.dtd" >
+   <PATCH nodename="C:\bin\vvvv_50beta35_x64\packs\GPUParticle\nodes\modules\Buffer\RandomBuffer (1D GPUParticle).v4p" systemname="RandomBuffer (GPUParticle)" filename="C:\bin\vvvv_50beta35_x64\packs\GPUParticle\nodes\modules\Buffer\RandomBuffer (GPUParticle).v4p">
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="0" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="480" top="675" width="405" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="480" top="675" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Integer">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Count">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="1" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="2040" top="675" width="405" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="2040" top="675" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Seed">
+   </PIN>
+   </NODE>
+   <NODE systemname="Dispatch1D (Compute Dispatch)" filename="%VVVV%\packs\InstanceNoodles\nodes\modules\Compute\Dispatch1D (Compute Dispatch).v4p" nodename="Dispatch1D (Compute Dispatch)" componentmode="Hidden" id="4">
+   <BOUNDS type="Node" left="1530" top="1860" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Count" visible="1">
+   </PIN>
+   <PIN pinname="Geometry Out" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Renderer (DX11 Buffer Advanced)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Renderer (DX11 Buffer Advanced)" componentmode="Hidden" id="6">
+   <BOUNDS type="Node" left="870" top="2685" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Stride" slicecount="1" values="4">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="0" srcpinname="Y Output Value" dstnodeid="4" dstpinname="Count" linkstyle="Bezier">
+   <LINKPOINT x="540" y="1538">
+   </LINKPOINT>
+   <LINKPOINT x="1530" y="1238">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="0" srcpinname="Y Output Value" dstnodeid="6" dstpinname="Element Count" linkstyle="Bezier">
+   <LINKPOINT x="510" y="1943">
+   </LINKPOINT>
+   <LINKPOINT x="1365" y="1643">
+   </LINKPOINT>
+   </LINK>
+   <NODE id="7" systemname="IOBox (Node)" componentmode="InABox" nodename="IOBox (Node)">
+   <PIN pinname="Descriptive Name" slicecount="1" values="Buffers">
+   </PIN>
+   <BOUNDS type="Box" left="870" top="3285" width="300" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="870" top="3285" width="750" height="240">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="6" srcpinname="Buffers" dstnodeid="7" dstpinname="Input Node">
+   </LINK>
+   <BOUNDS type="Window" left="24330" top="14145" width="6015" height="4875">
+   </BOUNDS>
+   <PACK Name="addonpack" Version="35.0.0">
+   </PACK>
+   <NODE systemname="CS_RandomBuffer1f (DX11.Effect)" filename="%VVVV%\packs\GPUParticle\nodes\modules\Buffer\CS_RandomBuffer1f.fx" nodename="CS_RandomBuffer1f (DX11.Effect)" componentmode="Hidden" id="8">
+   <BOUNDS type="Node" left="1185" top="2235" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Size" visible="1">
+   </PIN>
+   <PIN pinname="Offset" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="8" srcpinname="Layer" dstnodeid="6" dstpinname="Layer">
+   </LINK>
+   <LINK srcnodeid="4" srcpinname="Geometry Out" dstnodeid="8" dstpinname="Geometry">
+   </LINK>
+   <LINK srcnodeid="1" srcpinname="Y Output Value" dstnodeid="8" dstpinname="Seed" linkstyle="Bezier">
+   <LINKPOINT x="2055" y="1725">
+   </LINKPOINT>
+   <LINKPOINT x="1920" y="1425">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="0" srcpinname="Y Output Value" dstnodeid="8" dstpinname="Count" linkstyle="Bezier">
+   <LINKPOINT x="540" y="1718">
+   </LINKPOINT>
+   <LINKPOINT x="2055" y="1418">
+   </LINKPOINT>
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="9">
+   <BOUNDS type="Box" left="3270" top="675" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="3270" top="675" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Size">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="9" srcpinname="Y Output Value" dstnodeid="8" dstpinname="Size" linkstyle="Bezier">
+   <LINKPOINT x="3270" y="1725">
+   </LINKPOINT>
+   <LINKPOINT x="2265" y="1425">
+   </LINKPOINT>
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="10">
+   <BOUNDS type="Box" left="4530" top="675" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="4530" top="675" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Offset">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="10" srcpinname="Y Output Value" dstnodeid="8" dstpinname="Offset" linkstyle="Bezier">
+   <LINKPOINT x="4515" y="1718">
+   </LINKPOINT>
+   <LINKPOINT x="2475" y="1418">
+   </LINKPOINT>
+   </LINK>
+   </PATCH>
