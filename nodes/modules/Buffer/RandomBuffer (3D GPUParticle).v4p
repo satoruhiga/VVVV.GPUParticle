@@ -37,7 +37,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="3150" top="675" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="3" visible="1" values="1,1.16,1">
+   <PIN pinname="Y Input Value" slicecount="3" visible="1" values="0,0,0">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -78,14 +78,12 @@
    <PIN pinname="Geometry Out" visible="1">
    </PIN>
    </NODE>
-   <NODE systemname="CS_RandomBuffer3f (DX11.Effect)" filename="%VVVV%\packs\GPUParticle\nodes\modules\Buffer\CS_RandomBuffer3f.fx" nodename="CS_RandomBuffer3f (DX11.Effect)" componentmode="Hidden" id="5">
-   <BOUNDS type="Node" left="1185" top="2535" width="100" height="100">
-   </BOUNDS>
-   </NODE>
    <NODE systemname="Renderer (DX11 Buffer Advanced)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Renderer (DX11 Buffer Advanced)" componentmode="Hidden" id="6">
    <BOUNDS type="Node" left="870" top="2985" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Stride" slicecount="1" values="12">
+   </PIN>
+   <PIN pinname="Enabled" slicecount="1" visible="1" values="1">
    </PIN>
    </NODE>
    <LINK srcnodeid="0" srcpinname="Y Output Value" dstnodeid="4" dstpinname="Count" linkstyle="Bezier">
@@ -93,8 +91,6 @@
    </LINKPOINT>
    <LINKPOINT x="1530" y="1530">
    </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="5" srcpinname="Layer" dstnodeid="6" dstpinname="Layer">
    </LINK>
    <LINK srcnodeid="0" srcpinname="Y Output Value" dstnodeid="6" dstpinname="Element Count" linkstyle="Bezier">
    <LINKPOINT x="525" y="1943">
@@ -112,34 +108,92 @@
    </NODE>
    <LINK srcnodeid="6" srcpinname="Buffers" dstnodeid="7" dstpinname="Input Node">
    </LINK>
-   <LINK srcnodeid="4" srcpinname="Geometry Out" dstnodeid="5" dstpinname="Geometry">
+   <BOUNDS type="Window" left="23235" top="12150" width="7890" height="5055">
+   </BOUNDS>
+   <PACK Name="addonpack" Version="35.0.0">
+   </PACK>
+   <NODE systemname="CS_RandomBuffer3f (DX11.Effect)" filename="%VVVV%\packs\GPUParticle\nodes\modules\Buffer\CS_RandomBuffer3f.fx" nodename="CS_RandomBuffer3f (DX11.Effect)" componentmode="Hidden" id="8">
+   <BOUNDS type="Node" left="1185" top="2535" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Technique" visible="1">
+   </PIN>
+   <PIN pinname="Enabled" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="8" srcpinname="Layer" dstnodeid="6" dstpinname="Layer">
    </LINK>
-   <LINK srcnodeid="1" srcpinname="Y Output Value" dstnodeid="5" dstpinname="Seed" linkstyle="Bezier">
+   <LINK srcnodeid="4" srcpinname="Geometry Out" dstnodeid="8" dstpinname="Geometry">
+   </LINK>
+   <LINK srcnodeid="1" srcpinname="Y Output Value" dstnodeid="8" dstpinname="Seed" linkstyle="Bezier">
    <LINKPOINT x="2055" y="1725">
    </LINKPOINT>
    <LINKPOINT x="1935" y="1725">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="0" srcpinname="Y Output Value" dstnodeid="5" dstpinname="Count" linkstyle="Bezier">
+   <LINK srcnodeid="0" srcpinname="Y Output Value" dstnodeid="8" dstpinname="Count" linkstyle="Bezier">
    <LINKPOINT x="540" y="1718">
    </LINKPOINT>
    <LINKPOINT x="2070" y="1718">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="2" srcpinname="Y Output Value" dstnodeid="5" dstpinname="SizeXYZ" linkstyle="Bezier">
+   <LINK srcnodeid="2" srcpinname="Y Output Value" dstnodeid="8" dstpinname="SizeXYZ" linkstyle="Bezier">
    <LINKPOINT x="3135" y="1958">
    </LINKPOINT>
    <LINKPOINT x="2310" y="1958">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="3" srcpinname="Y Output Value" dstnodeid="5" dstpinname="OffsetXYZ" linkstyle="Bezier">
+   <LINK srcnodeid="3" srcpinname="Y Output Value" dstnodeid="8" dstpinname="OffsetXYZ" linkstyle="Bezier">
    <LINKPOINT x="4365" y="1950">
    </LINKPOINT>
    <LINKPOINT x="2490" y="1950">
    </LINKPOINT>
    </LINK>
-   <BOUNDS type="Window" left="27840" top="15930" width="6165" height="5175">
+   <NODE nodename="IOBox (Enumerations)" componentmode="InABox" id="9">
+   <BOUNDS type="Box" left="5565" top="675" width="795" height="240">
    </BOUNDS>
-   <PACK Name="addonpack" Version="35.0.0">
-   </PACK>
+   <BOUNDS type="Node" left="5565" top="675" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input Enum" slicecount="1" visible="1" values="Signed">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Technique">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="9" srcpinname="Output Enum" dstnodeid="8" dstpinname="Technique" linkstyle="Bezier">
+   <LINKPOINT x="5565" y="1710">
+   </LINKPOINT>
+   <LINKPOINT x="2670" y="1710">
+   </LINKPOINT>
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="10">
+   <BOUNDS type="Box" left="6750" top="675" width="480" height="480">
+   </BOUNDS>
+   <BOUNDS type="Node" left="6750" top="675" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Enabled">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="10" srcpinname="Y Output Value" dstnodeid="6" dstpinname="Enabled" linkstyle="Bezier">
+   <LINKPOINT x="6750" y="2055">
+   </LINKPOINT>
+   <LINKPOINT x="1905" y="2055">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="10" srcpinname="Y Output Value" dstnodeid="8" dstpinname="Enabled" linkstyle="Bezier">
+   <LINKPOINT x="6750" y="1830">
+   </LINKPOINT>
+   <LINKPOINT x="2850" y="1830">
+   </LINKPOINT>
+   </LINK>
    </PATCH>
