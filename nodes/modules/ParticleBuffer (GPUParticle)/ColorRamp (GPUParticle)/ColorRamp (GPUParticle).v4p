@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta35.dtd" >
    <PATCH nodename="C:\bin\vvvv_50beta35_x64\packs\GPUParticle\nodes\modules\ParticleBuffer (GPUParticle)\ColorRamp (GPUParticle)\ColorRamp (GPUParticle).v4p" systemname="AddForce (GPUParticle)" filename="C:\WORK\vvvv\TestParticle\GPUParticle\AddForce (GPUParticle).v4p" scrollx="30" scrolly="0">
-   <BOUNDS type="Window" left="22200" top="11880" width="5550" height="5655">
+   <BOUNDS type="Window" left="22200" top="11880" width="5940" height="5655">
    </BOUNDS>
    <PACK Name="addonpack" Version="35.0.0">
    </PACK>
@@ -31,9 +31,9 @@
    <LINK srcnodeid="15" srcpinname="Output" dstnodeid="12" dstpinname="Input Node">
    </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="16" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Box" left="4140" top="720" width="480" height="480">
+   <BOUNDS type="Box" left="4590" top="720" width="480" height="480">
    </BOUNDS>
-   <BOUNDS type="Node" left="4140" top="720" width="0" height="0">
+   <BOUNDS type="Node" left="4590" top="720" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
    </PIN>
@@ -50,7 +50,7 @@
    <PIN pinname="Y Output Value" visible="1">
    </PIN>
    </NODE>
-   <NODE systemname="CID (GPUParticle Counter Indirect)" filename="..\..\CID (GPUParticle Counter Indirect)\CID (GPUParticle Counter Indirect).v4p" nodename="CID (GPUParticle Counter Indirect)" componentmode="Hidden" id="26">
+   <NODE systemname="CID (GPUParticle Counter Indirect)" filename="%VVVV%\packs\GPUParticle\nodes\modules\IDManager (GPUParticle)\CID (GPUParticle Counter Indirect)\CID (GPUParticle Counter Indirect).v4p" nodename="CID (GPUParticle Counter Indirect)" componentmode="Hidden" id="26">
    <BOUNDS type="Node" left="1905" top="1740" width="100" height="100">
    </BOUNDS>
    <PIN pinname="IDs" visible="1" slicecount="1" values="||">
@@ -94,7 +94,7 @@
    <LINKPOINT x="750" y="2280">
    </LINKPOINT>
    </LINK>
-   <NODE nodename="IOBox (Node)" componentmode="InABox" id="34">
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="34" systemname="IOBox (Node)">
    <BOUNDS type="Box" left="2790" top="720" width="300" height="240">
    </BOUNDS>
    <BOUNDS type="Node" left="2790" top="720" width="0" height="0">
@@ -132,66 +132,90 @@
    <LINKPOINT x="1935" y="1635">
    </LINKPOINT>
    </LINK>
-   <NODE nodename="IOBox (Enumerations)" componentmode="InABox" id="45">
-   <BOUNDS type="Box" left="3030" top="2445" width="495" height="240">
+   <NODE nodename="IOBox (Enumerations)" componentmode="InABox" id="45" systemname="IOBox (Enumerations)">
+   <BOUNDS type="Box" left="3180" top="2445" width="495" height="240">
    </BOUNDS>
-   <BOUNDS type="Node" left="3030" top="2445" width="0" height="0">
+   <BOUNDS type="Node" left="3180" top="2445" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Input Enum" slicecount="1" visible="1" values="Set">
    </PIN>
    </NODE>
-   <NODE systemname="CS_ColorRamp (DX11.Effect)" filename="%VVVV%\packs\GPUParticle\nodes\modules\ParticleBuffer (GPUParticle)\ColorRamp (GPUParticle)\CS_ColorRamp.fx" nodename="CS_ColorRamp (DX11.Effect)" componentmode="Hidden" id="44">
+   <NODE systemname="CS_ColorRamp (DX11.Effect)" filename="%VVVV%\packs\GPUParticle\nodes\modules\ParticleBuffer (GPUParticle)\ColorRamp (GPUParticle)\CS_ColorRamp.fx" nodename="CS_ColorRamp (DX11.Effect)" componentmode="Hidden" id="46">
    <BOUNDS type="Node" left="1605" top="2805" width="100" height="100">
    </BOUNDS>
-   <PIN pinname="Technique" visible="1">
+   <PIN pinname="Invert" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="26" srcpinname="Dispatcher" dstnodeid="44" dstpinname="Geometry" linkstyle="Bezier">
+   <LINK srcnodeid="26" srcpinname="Dispatcher" dstnodeid="46" dstpinname="Geometry" linkstyle="Bezier">
    <LINKPOINT x="1935" y="2400">
    </LINKPOINT>
    <LINKPOINT x="1935" y="2400">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="26" srcpinname="IDs" dstnodeid="44" dstpinname="IDs" linkstyle="Bezier">
+   <LINK srcnodeid="26" srcpinname="IDs" dstnodeid="46" dstpinname="IDs" linkstyle="Bezier">
    <LINKPOINT x="2190" y="2393">
    </LINKPOINT>
    <LINKPOINT x="2250" y="2393">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="26" srcpinname="CopyCounterBuffer" dstnodeid="44" dstpinname="CopyCounterBuffer" linkstyle="Bezier">
+   <LINK srcnodeid="26" srcpinname="CopyCounterBuffer" dstnodeid="46" dstpinname="CopyCounterBuffer" linkstyle="Bezier">
    <LINKPOINT x="2445" y="2400">
    </LINKPOINT>
    <LINKPOINT x="2430" y="2400">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="44" srcpinname="Layer" dstnodeid="15" dstpinname="Input 2" linkstyle="Bezier">
+   <LINK srcnodeid="46" srcpinname="Layer" dstnodeid="15" dstpinname="Input 2" linkstyle="Bezier">
    <LINKPOINT x="1590" y="3330">
    </LINKPOINT>
    <LINKPOINT x="1215" y="3330">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="16" srcpinname="Y Output Value" dstnodeid="44" dstpinname="Enabled" linkstyle="Bezier">
-   <LINKPOINT x="4140" y="2003">
+   <LINK srcnodeid="16" srcpinname="Y Output Value" dstnodeid="46" dstpinname="Enabled" linkstyle="Bezier">
+   <LINKPOINT x="4440" y="2003">
    </LINKPOINT>
-   <LINKPOINT x="3240" y="2003">
+   <LINKPOINT x="3390" y="2003">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="34" srcpinname="Output Node" dstnodeid="44" dstpinname="Texture" linkstyle="Bezier">
+   <LINK srcnodeid="34" srcpinname="Output Node" dstnodeid="46" dstpinname="Texture" linkstyle="Bezier">
    <LINKPOINT x="2805" y="1883">
    </LINKPOINT>
    <LINKPOINT x="2595" y="1883">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="35" srcpinname="AgeLife" dstnodeid="44" dstpinname="AgeLifeBuffer" linkstyle="Bezier">
+   <LINK srcnodeid="35" srcpinname="AgeLife" dstnodeid="46" dstpinname="AgeLifeBuffer" linkstyle="Bezier">
    <LINKPOINT x="2700" y="2168">
    </LINKPOINT>
    <LINKPOINT x="2895" y="2168">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="45" srcpinname="Output Enum" dstnodeid="44" dstpinname="Technique" linkstyle="VHV">
-   <LINKPOINT x="3125" y="2730">
+   <LINK srcnodeid="45" srcpinname="Output Enum" dstnodeid="46" dstpinname="Technique" linkstyle="VHV">
+   <LINKPOINT x="3225" y="2730">
    </LINKPOINT>
-   <LINKPOINT x="2995" y="2730">
+   <LINKPOINT x="3045" y="2730">
+   </LINKPOINT>
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="47" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="3975" top="720" width="480" height="480">
+   </BOUNDS>
+   <BOUNDS type="Node" left="3975" top="720" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Invert">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="47" srcpinname="Y Output Value" dstnodeid="46" dstpinname="Invert" linkstyle="Bezier">
+   <LINKPOINT x="3975" y="1988">
+   </LINKPOINT>
+   <LINKPOINT x="2295" y="1988">
    </LINKPOINT>
    </LINK>
    </PATCH>

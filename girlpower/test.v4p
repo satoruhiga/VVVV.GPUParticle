@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta35.dtd" >
-   <PATCH nodename="C:\bin\vvvv_50beta35_x64\packs\GPUParticle\girlpower\test.v4p" scrollx="1350" scrolly="1590" locked="0">
+   <PATCH nodename="C:\bin\vvvv_50beta35_x64\packs\GPUParticle\girlpower\test.v4p" scrollx="0" scrolly="0" locked="0">
    <BOUNDS type="Window" left="25620" top="7680" width="15405" height="15780">
    </BOUNDS>
    <PACK Name="addonpack" Version="35.0.0">
@@ -8,7 +8,7 @@
    </PACK>
    <INFO author="" description="" tags="">
    </INFO>
-   <NODE systemname="Renderer (DX11)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Renderer (DX11)" componentmode="Hidden" id="146">
+   <NODE systemname="Renderer (DX11)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Renderer (DX11)" componentmode="InAWindow" id="146">
    <BOUNDS type="Node" left="2205" top="14610" width="100" height="100">
    </BOUNDS>
    <BOUNDS type="Box" left="2205" top="14610" width="6000" height="4500">
@@ -262,7 +262,7 @@
    <PIN pinname="AsyncThreadPriority" slicecount="1" values="-1">
    </PIN>
    </NODE>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="242">
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="242" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="2565" top="3915" width="795" height="240">
    </BOUNDS>
    <BOUNDS type="Node" left="2565" top="3915" width="0" height="0">
@@ -290,7 +290,7 @@
    <PIN pinname="Render State" visible="1" slicecount="1" values="||">
    </PIN>
    </NODE>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="273">
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="273" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="6555" top="8655" width="585" height="240">
    </BOUNDS>
    <BOUNDS type="Node" left="6555" top="8655" width="0" height="0">
@@ -316,7 +316,7 @@
    </NODE>
    <LINK srcnodeid="275" srcpinname="Render State" dstnodeid="271" dstpinname="Render State">
    </LINK>
-   <NODE nodename="IOBox (Color)" componentmode="InABox" id="276">
+   <NODE nodename="IOBox (Color)" componentmode="InABox" id="276" systemname="IOBox (Color)">
    <BOUNDS type="Box" left="7635" top="8655" width="2235" height="240">
    </BOUNDS>
    <BOUNDS type="Node" left="7635" top="8655" width="0" height="0">
@@ -372,7 +372,7 @@
    <PIN pinname="Buffer" visible="1">
    </PIN>
    </NODE>
-   <NODE nodename="IOBox (Color)" componentmode="InABox" id="291">
+   <NODE nodename="IOBox (Color)" componentmode="InABox" id="291" systemname="IOBox (Color)">
    <BOUNDS type="Box" left="11325" top="5070" width="2580" height="945">
    </BOUNDS>
    <BOUNDS type="Node" left="11325" top="5070" width="0" height="0">
@@ -410,7 +410,7 @@
    </NODE>
    <LINK srcnodeid="203" srcpinname="Y Output Value" dstnodeid="300" dstpinname="Input 2">
    </LINK>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="301">
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="301" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="7095" top="10005" width="795" height="240">
    </BOUNDS>
    <BOUNDS type="Node" left="7095" top="10005" width="0" height="0">
@@ -518,7 +518,7 @@
    <PIN pinname="OutputXYZ" visible="1">
    </PIN>
    </NODE>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="320">
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="320" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="6030" top="13980" width="795" height="720">
    </BOUNDS>
    <BOUNDS type="Node" left="6030" top="13980" width="0" height="0">
@@ -670,14 +670,6 @@
    <PIN pinname="Color2" slicecount="1" values="|0.00371,0.00371,0.00371,1.00000|">
    </PIN>
    </NODE>
-   <NODE systemname="Preview (DX11.Texture)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Preview (DX11.Texture)" componentmode="Hidden" id="335">
-   <BOUNDS type="Node" left="11940" top="9765" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="Texture In" visible="1" slicecount="1" values="||">
-   </PIN>
-   <BOUNDS type="Window" left="36000" top="24480" width="6000" height="4500">
-   </BOUNDS>
-   </NODE>
    <NODE systemname="Random (Value)" nodename="Random (Value)" componentmode="Hidden" id="338">
    <BOUNDS type="Node" left="9945" top="5955" width="100" height="100">
    </BOUNDS>
@@ -737,7 +729,7 @@
    <NODE systemname="ColorRamp (GPUParticle)" filename="%VVVV%\packs\GPUParticle\nodes\modules\ParticleBuffer (GPUParticle)\ColorRamp (GPUParticle)\ColorRamp (GPUParticle).v4p" nodename="ColorRamp (GPUParticle)" componentmode="Hidden" id="344">
    <BOUNDS type="Node" left="9195" top="9780" width="100" height="100">
    </BOUNDS>
-   <BOUNDS type="Window" left="22200" top="11880" width="5550" height="5655">
+   <BOUNDS type="Window" left="22200" top="11880" width="5940" height="5655">
    </BOUNDS>
    <PIN pinname="Layer In" visible="1">
    </PIN>
@@ -749,6 +741,8 @@
    </PIN>
    <PIN pinname="Enabled" slicecount="1" values="1">
    </PIN>
+   <PIN pinname="Invert" slicecount="1" values="0">
+   </PIN>
    </NODE>
    <LINK srcnodeid="339" srcpinname="Layer" dstnodeid="344" dstpinname="Layer In">
    </LINK>
@@ -757,7 +751,7 @@
    <LINK srcnodeid="306" srcpinname="ID Buffers" dstnodeid="344" dstpinname="IDs">
    </LINK>
    <NODE systemname="Gradient (DX11.TextureFX)" filename="%VVVV%\packs\dx11\nodes\texture11\Source\Gradient.tfx" nodename="Gradient (DX11.TextureFX)" componentmode="Hidden" id="345">
-   <BOUNDS type="Node" left="9840" top="9405" width="100" height="100">
+   <BOUNDS type="Node" left="9900" top="9090" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Texture Out" visible="1">
    </PIN>
@@ -765,35 +759,21 @@
    </PIN>
    <PIN pinname="Technique" slicecount="1" values="Smoothstep">
    </PIN>
-   <PIN pinname="Color1" slicecount="1" values="|0.00000,0.71220,1.00000,1.00000|" visible="1">
+   <PIN pinname="Color1" slicecount="1" visible="1" values="|0.00000,0.71220,1.00000,1.00000|">
    </PIN>
    <PIN pinname="Color2" slicecount="1" values="|1.00000,0.14079,0.00557,1.00000|">
    </PIN>
    </NODE>
-   <LINK srcnodeid="345" srcpinname="Texture Out" dstnodeid="344" dstpinname="Ramp Texture">
-   </LINK>
    <LINK srcnodeid="290" srcpinname="Buffer" dstnodeid="330" dstpinname="Color Buffer">
    </LINK>
-   <LINK srcnodeid="334" srcpinname="Texture Out" dstnodeid="339" dstpinname="Ramp Texture">
-   </LINK>
-   <NODE systemname="Pillow (DX11.TextureFX)" filename="%VVVV%\packs\dx11\nodes\texture11\Source\Pillow.tfx" nodename="Pillow (DX11.TextureFX)" componentmode="Hidden" id="350">
-   <BOUNDS type="Node" left="9795" top="11205" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="Texture Out" visible="1">
-   </PIN>
-   <PIN pinname="Color1" slicecount="1" values="|0.98333,0.46823,0.01549,1.00000|">
-   </PIN>
-   <PIN pinname="Color2" slicecount="1" values="|0.99537,0.99047,0.98523,1.00000|">
-   </PIN>
-   <PIN pinname="GammaXY" slicecount="2" values="-3.67,-3.67">
-   </PIN>
-   <PIN pinname="Enabled" slicecount="1" values="1">
-   </PIN>
-   </NODE>
    <LINK srcnodeid="148" srcpinname="Layer Out" dstnodeid="146" dstpinname="Layers">
    </LINK>
    <LINK srcnodeid="308" srcpinname="View" dstnodeid="146" dstpinname="View">
    </LINK>
    <LINK srcnodeid="308" srcpinname="Projection" dstnodeid="146" dstpinname="Projection">
+   </LINK>
+   <LINK srcnodeid="334" srcpinname="Texture Out" dstnodeid="339" dstpinname="Ramp Texture">
+   </LINK>
+   <LINK srcnodeid="345" srcpinname="Texture Out" dstnodeid="344" dstpinname="Ramp Texture">
    </LINK>
    </PATCH>

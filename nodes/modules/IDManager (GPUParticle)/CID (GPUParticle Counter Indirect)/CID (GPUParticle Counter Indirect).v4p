@@ -15,7 +15,7 @@
    </BOUNDS>
    <PIN pinname="Argument Buffer" visible="1" slicecount="1" values="||">
    </PIN>
-   <PIN pinname="Warp Size" slicecount="1" values="64" visible="1">
+   <PIN pinname="Warp Size" slicecount="1" visible="1" values="64">
    </PIN>
    <PIN pinname="Geometry Out" visible="1">
    </PIN>
@@ -72,7 +72,7 @@
    <LINKPOINT x="3435" y="1980">
    </LINKPOINT>
    </LINK>
-   <BOUNDS type="Window" left="12675" top="4335" width="5475" height="3765">
+   <BOUNDS type="Window" left="11460" top="2565" width="5475" height="3765">
    </BOUNDS>
    <PACK Name="vvvv-ZeroMQ" Version="0.5.0">
    </PACK>
@@ -92,7 +92,7 @@
    <LINKPOINT x="2235" y="1418">
    </LINKPOINT>
    </LINK>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="6">
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="6" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="3180" top="450" width="795" height="240">
    </BOUNDS>
    <BOUNDS type="Node" left="3180" top="450" width="0" height="0">

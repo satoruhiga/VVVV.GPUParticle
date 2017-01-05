@@ -3,6 +3,7 @@
 #include "../ParticleData.fxh"
 
 Texture2D Texture <string uiname = "Texture"; >;
+bool Invert = false;
 
 SamplerState Sampler {
 	Filter = MIN_MAG_MIP_LINEAR; 
@@ -25,6 +26,7 @@ void CS_Set(uint3 dtid : SV_DispatchThreadID)
 	AgeLife AL = AgeLifeBuffer[dtid.x];
 	
 	float Pct = clamp(AL.Age / AL.Life, 0, 1);
+	Pct = Invert ? 1 - Pct : Pct;
 	float4 C = Texture.SampleLevel(Sampler, float2(Pct, 0.5), 0);
 	p.Color = C;
 	
