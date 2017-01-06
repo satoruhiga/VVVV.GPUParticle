@@ -83,12 +83,11 @@ void GS(point VS_OUT In[1],
 float4 PS(GS_OUT Input) : SV_Target {
 	float2 uv = Input.TexCoord.xy;
 	
-	float4 C = Texture0.SampleLevel(s0, uv, 0);
-	C *= DefaultColor * Input.Color;
-	
 	if (CircleShape && length(uv - 0.5) > 0.5)
 		discard;
-	
+
+	float4 C = Texture0.SampleLevel(s0, uv, 0);
+	C *= DefaultColor * Input.Color;
 	return C;
 }
 
